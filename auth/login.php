@@ -2,6 +2,12 @@
 <?php require '../config/config.php'; ?>
 
 <?php
+
+    if(isset($_SESSION['username'])) {
+        echo '<script> alert("You are already logged in") </script>';
+        header('location: '.APPURL. "");
+        
+    }
     if(isset($_POST['submit'])) {
        if(empty($_POST['email']) OR empty($_POST['password'])) {
            echo '<script> alert("All fields are required") </script>';
@@ -16,7 +22,9 @@
 
            if($login->rowCount() > 0) {
                if(password_verify($password, $fetch['mypassword'])) {
-                   echo '<script> alert("login successful") </script>';
+                   $_SESSION['username'] = $fetch['username'];
+                   $_SESSION['user_id'] = $fetch['id'];
+                   header('location: '.APPURL. "");
                } else {
                    echo '<script> alert("Incorrect password") </script>';
                }

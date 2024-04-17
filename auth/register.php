@@ -2,6 +2,12 @@
  <?php require '../config/config.php'; ?>
 
 <?php
+
+    if(isset($_SESSION['username'])) {
+        echo '<script> alert("You are already logged in") </script>';
+        header('location: '.APPURL. "");
+        
+    }
     if(isset($_POST['submit'])) {
        if(empty($_POST['username']) OR empty($_POST['email']) OR empty($_POST['password'])) {
            echo '<script> alert("All fields are required") </script>';
