@@ -46,7 +46,7 @@
             <?php if(isset($_SESSION['username'])): ?>
 
                 <li class="nav-item">
-                <a class="nav-link active  text-white" aria-current="page" href=" <?php APPURL; ?>/shopping/cart.php"><i class="fas fa-shopping-cart"></i>(2)</a>
+                <a class="nav-link active  text-white" aria-current="page" href=" <?php echo APPURL; ?>/shopping/cart.php"><i class="fas fa-shopping-cart"></i>(2)</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle  text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
