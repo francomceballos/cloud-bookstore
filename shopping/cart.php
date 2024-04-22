@@ -34,29 +34,36 @@
                         <th scope="col">Quantity</th>
                         <th scope="col">Total Price</th>
                         <th scope="col">Update</th>
-                        <th scope="col"><a href="#" class="btn btn-danger text-white">Clear</a></th>
+                        <th scope="col"><button class="delete-all btn btn-danger text-white">Clear cart</button></th>
                       </tr>
                     </thead>
                     <tbody>
+                      <?php if(count($allProducts) > 0): ?>
                       <?php foreach($allProducts as $product): ?>
-                      <tr class="mb-4">
-                        <th scope="row"><?php echo $product->prod_id; ?></th>
-                        <td><img width="100" height="100"
-                        src="../images/<?php echo $product->prod_image; ?>"
-                        class="img-fluid rounded-3" alt="Cotton T-shirt">
-                        </td>
-                        <td><?php echo $product->prod_name; ?></td>
-                        <td class="price">
-                          <span class="prod_price"><?php echo $product->prod_price; ?></span>
-                          <span class="currency">$</span>
-                        </td>
-                        <td><input id="form1" min="1" name="quantity" value="<?php echo $product->prod_amount; ?>" type="number"
-                        class="form-control form-control-sm prod_amount" /></td>
-                        <td class="total_price"><?php echo $product->prod_price * $product->prod_amount; ?></td>
-                        <td><button value="<?php echo $product->id; ?>" class="btn-update btn btn-success text-white"><i class="fas fa-pen"></i> </button></td>
-                        <td><button value="<?php echo $product->id; ?>" class="btn btn-danger text-white btn-delete"><i class="fas fa-trash-alt"></i> </button></td>
-                      </tr>
+                        <tr class="mb-4">
+                          <th scope="row"><?php echo $product->prod_id; ?></th>
+                          <td><img width="100" height="100"
+                          src="../images/<?php echo $product->prod_image; ?>"
+                          class="img-fluid rounded-3" alt="Cotton T-shirt">
+                          </td>
+                          <td><?php echo $product->prod_name; ?></td>
+                          <td class="price">
+                            <span class="prod_price"><?php echo $product->prod_price; ?></span>
+                            <span class="currency">$</span>
+                          </td>
+                          <td><input id="form1" min="1" name="quantity" value="<?php echo $product->prod_amount; ?>" type="number"
+                          class="form-control form-control-sm prod_amount" /></td>
+                          <td class="total_price"><?php echo $product->prod_price * $product->prod_amount; ?></td>
+                          <td><button value="<?php echo $product->id; ?>" class="btn-update btn btn-success text-white"><i class="fas fa-pen"></i> </button></td>
+                          <td><button value="<?php echo $product->id; ?>" class="btn btn-danger text-white btn-delete"><i class="fas fa-trash-alt"></i> </button></td>
+                        </tr>
                       <?php endforeach; ?>
+                    <?php else: ?>
+                      <div class="alert alert-danger bg-danger text-white">
+                        <h3 class="text-center">Your cart is empty</h3>
+                      </div>
+                    <?php endif; ?>
+                      </div>
                     </tbody>
                   </table>
                   <a href="<?php echo APPURL; ?>" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i>  Continue Shopping</a>
@@ -146,6 +153,22 @@
                     }
                   })
                 });
+
+
+                $(".delete-all").on('click', function(e) {
+
+                  $.ajax({
+                    type: "POST",
+                    url: "delete-all-item.php",
+                    data: {
+                      delete: "delete"
+                    },
+                    success: function() {
+                      alert("All products deleted successfully");
+                      reload();
+                    }
+                  })
+                });
       fetch();
 
       function fetch() {
@@ -160,11 +183,8 @@
         }, 2000);
       } 
       
-      function reload() {
-
-       
-            $("body").load("cart.php")
-       
+      function reload() {      
+            $("body").load("cart.php")    
       }
 });
 </script>

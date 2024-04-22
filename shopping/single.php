@@ -93,7 +93,7 @@
                                     </div>
                                     <?php if(isset($_SESSION['user_id'])) : ?>
                                         <div class="">
-                                            <input type="text" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" class="form-control">
+                                            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" class="form-control">
                                         </div>
                                     <?php endif; ?>
                                 <div class="cart mt-4 align-items-center"> 
@@ -131,8 +131,13 @@
                 success: function() {
                     alert("Product added to cart successfully");
                     $("#submit").html("<i class='fas fa-shopping-cart'></i> Added to cart").prop("disabled", true);
+                    refresh();
                 }
             });
+
+            function refresh() {      
+            $("body").load("single.php?id=<?php echo $id; ?>");    
+            }
 
         });	
     });
