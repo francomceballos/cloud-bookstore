@@ -1,5 +1,5 @@
-<?php include '../includes/header.php'; ?>
-<?php include '../config/config.php'; ?>
+<?php require "../includes/header.php"; ?>
+<?php require "../config/config.php"; ?>
 
 <?php
 
@@ -7,6 +7,15 @@
   $products->execute();
 
   $allProducts = $products->fetchAll(PDO::FETCH_OBJ);
+
+
+  if(isset($_POST['submit'])) {
+    $price = $_POST['price'];
+
+    $_SESSION['price'] = $price;
+
+    header('location: checkout.php');
+  }
 
 ?>
 
@@ -75,15 +84,14 @@
                   <hr class="my-4">
 
                   
-
+                  <form method="POST" action="cart.php">
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Total price</h5>
                     <h5 class="full_price"></h5>
+                    <input class="input_price" type="text" name="price">
                   </div>
-
-                  <button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Checkout</button>
-
+                  <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Checkout</button>
+                </form>
                 </div>
               </div>
             </div>
@@ -94,7 +102,7 @@
 
     </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php require '../includes/footer.php'; ?>
 
 <script>
     $(document).ready(function() {
@@ -180,6 +188,7 @@
                       sum += parseFloat($(this).text());
                   });
                   $(".full_price").html(sum+" $");
+                  $(".input_price").val(sum);
         }, 2000);
       } 
       
