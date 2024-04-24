@@ -41,7 +41,7 @@
                         <th scope="col">Quantity</th>
                         <th scope="col">Total Price</th>
                         <th scope="col">Update</th>
-                        <th scope="col"><button class="delete-all btn btn-danger text-white">Clear cart</button></th>
+                        <th scope="col"><button class="delete-all btn btn-danger text-white btn-sm ">Clear cart</button></th>
                       </tr>
                     </thead>
                     <tbody>
