@@ -2,7 +2,6 @@
 <?php require "../config/config.php"; ?>
 
       <!-- Heading -->
-      <?php echo $_SESSION['price'] ; ?>
 
       <h2 class="my-5 h2 text-center">Checkout</h2>
 
@@ -27,8 +26,7 @@
                   <!--firstName-->
                   <div class="md-form">
                     <label for="firstName" class="">First name</label>
-
-                    <input type="text" name="first_name" id="firstName" class="form-control">
+                    <input type="text" name="first_name" id="firstName" class="form-control" required>
                   </div>
 
                 </div>
@@ -40,8 +38,7 @@
                   <!--lastName-->
                   <div class="md-form">
                     <label for="lastName" class="">Last name</label>
-
-                    <input type="text" name="last_name" id="lastName" class="form-control">
+                    <input type="text" name="last_name" id="lastName" class="form-control" required>
                   </div>
 
                 </div>
@@ -52,29 +49,26 @@
 
               <!--Username-->
               <div class="md-form mb-5">
-                <label for="email" class="">Username</label>
-
-                <input type="text" name="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                <label for="username" class="">Username</label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1" required>
               </div>
 
               <!--email-->
               <div class="md-form mb-5">
                 <label for="email" class="">Email (optional)</label>
-
-                <input type="text" name="email" id="email" class="form-control" placeholder="youremail@example.com">
+                <input type="email" name="email" id="email" class="form-control" placeholder="youremail@example.com">
               </div>
-              </div>
-              <!--Grid row-->
-
             
-              <hr class="mb-4">
-              <script
-              src="https://checkout.stripe.com/checkout.js"
-              class="stripe-button"
-              data-key="pk_test_51P8OJSP736g8Fma5G8lhVW0mB3LA9OtMFPRX8DVcCCE2RpO8Z7hCS5dRu5d0Wal3sdMcHOIaWgGwP5BCfr0LIyrY0016q3rHPu"
-              data-curency="usd"
-              data-label="Pay Now">
-            </script>
+                <hr class="mb-4">
+                <script
+                  src="https://checkout.stripe.com/checkout.js"
+                  class="stripe-button"
+                  data-key="pk_test_51P8OJSP736g8Fma5G8lhVW0mB3LA9OtMFPRX8DVcCCE2RpO8Z7hCS5dRu5d0Wal3sdMcHOIaWgGwP5BCfr0LIyrY0016q3rHPu"
+                  data-currency="usd"
+                  data-amount="<?php echo $_SESSION['price'] * 100 ?>"
+                  data-label="Pay Now"
+                  >
+                </script>
 
             </form>
 

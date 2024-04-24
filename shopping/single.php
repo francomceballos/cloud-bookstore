@@ -123,7 +123,6 @@
 
             e.preventDefault();
             var $formdata = $("#cart-form").serialize()+"&submit=submit";
-
             $.ajax({
                 type: "POST",
                 url: "single.php?id=<?php echo $id; ?>",
@@ -134,12 +133,10 @@
                     refresh();
                 }
             });
-
             function refresh() {      
             $("body").load("single.php?id=<?php echo $id; ?>");    
             }
-
         });	
-    });
-            
+    });         
+
 </script>

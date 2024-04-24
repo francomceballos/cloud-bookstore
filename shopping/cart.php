@@ -18,8 +18,6 @@
   }
 
 ?>
-
-
     <div class="row d-flex justify-content-center align-items-center h-100 mt-5 mt-5">
       <div class="col-12">
         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
@@ -29,7 +27,7 @@
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                    <h6 class="mb-0 text-muted">2 items</h6>
+                    <h6 class="mb-0 text-muted"><?php echo $getNumber->num_products; ?> items</h6>
                   </div>
 
 
@@ -81,14 +79,12 @@
               <div class="col-lg-4 bg-grey">
                 <div class="p-5">
                   <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
-                  <hr class="my-4">
-
-                  
+                  <hr class="my-4">     
                   <form method="POST" action="cart.php">
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Total price</h5>
                     <h5 class="full_price"></h5>
-                    <input class="input_price" type="text" name="price">
+                    <input class="input_price" type="hidden" name="price">
                   </div>
                   <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Checkout</button>
                 </form>
@@ -105,13 +101,10 @@
 <?php require '../includes/footer.php'; ?>
 
 <script>
-    $(document).ready(function() {
-      $(".prod_amount").mouseup(function () {
+            $(document).ready(function() {
+              $(".prod_amount").mouseup(function () {
                   
-                  var $el = $(this).closest('tr');
-
-        
-
+                  var $el = $(this).closest('tr');        
                   var prod_amount = $el.find(".prod_amount").val();
                   var prod_price = $el.find(".prod_price").html();
 
@@ -123,10 +116,7 @@
 
                   //Update item
                     $(".btn-update").on('click', function(e) {
-
                       var id = $(this).val();
-                    
-
                       $.ajax({
                         type: "POST",
                         url: "update-item.php",
@@ -143,7 +133,7 @@
                       })
                     });                
            fetch();     
-      });
+        });
 
                       //Delete item
                 $(".btn-delete").on('click', function(e) {
