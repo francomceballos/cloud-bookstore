@@ -179,7 +179,7 @@
                   });
                   $(".full_price").html(sum+" $");
                   $(".input_price").val(sum);
-        }, 2000);
+        }, 500);
       } 
       
       function reload() {      
