@@ -1,6 +1,6 @@
 <?php require "../includes/header.php"; ?>
 <?php require "../config/config.php"; ?>
-
+<div class="container">
       <!-- Heading -->
 
       <h2 class="my-5 h2 text-center">Checkout</h2>
@@ -75,5 +75,6 @@
           </div>
          
         </div>
-
+</div>
+</div>
 <?php require "../includes/footer.php"; ?>

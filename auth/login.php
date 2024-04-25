@@ -35,31 +35,22 @@
     }
 
 ?>
-
+<div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form class="form-control mt-5" method="POST" action="login.php">
-                    <h4 class="text-center mt-3"> Login </h4>
-                   
-                    <div class="">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                        <div class="">
-                            <input type="email" name="email"  class="form-control" id="" value="">
-                        </div>
+                    <h4 class="text-center mt-3">Login</h4>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmail" required>
                     </div>
-                    <div class="">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                        <div class="">
-                            <input type="password" name="password" class="form-control" id="inputPassword">
-                        </div>
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="inputPassword" required>
                     </div>
-                    <button class="w-100 btn btn-lg btn-primary mt-4 mb-5" name="submit" type="submit">Login</button>
-
+                    <button class="w-100 btn btn-lg btn-primary mt-4" name="submit" type="submit">Login</button>
                 </form>
             </div>
         </div>
- 
-   
-
-
+</div>
 <?php require '../includes/footer.php'; ?>

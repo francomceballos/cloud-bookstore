@@ -1,7 +1,7 @@
 <?php require '../includes/header.php'; ?>
 <?php require '../config/config.php'; ?>
 
-
+<div class="container">
 <?php
 
     if(isset($_POST['submit'])) {
@@ -114,7 +114,7 @@
   </div>
 
 
-
+</div>
 <?php require '../includes/footer.php'; ?>
 
 <script>

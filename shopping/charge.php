@@ -1,6 +1,7 @@
 <?php require "../includes/header.php"; ?>
 <?php require "../config/config.php"; ?>
 <?php require "../vendor/autoload.php"; ?>
+<div class="container">
 <?php
 
 

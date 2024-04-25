@@ -7,6 +7,7 @@
 
         $allRows = $rows->fetchAll(PDO::FETCH_OBJ);
  ?>
+ <div class="container">
         <div class="row mt-5">
         <?php foreach ($allRows as $product): ?>
             <div class="col-md-3 offset-md-0 offset-sm-1">
@@ -33,4 +34,6 @@
             </div>
         <br>
         <?php endforeach; ?>
+        </div>
+        </div>
         <?php require 'includes/footer.php'; ?>

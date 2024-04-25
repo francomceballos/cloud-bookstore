@@ -18,86 +18,82 @@
   }
 
 ?>
-    <div class="row d-flex justify-content-center align-items-center h-100 mt-5 mt-5">
-      <div class="col-12">
-        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-          <div class="card-body p-0">
-            <div class="row g-0">
-              <div class="col-lg-8">
-                <div class="p-5">
-                  <div class="d-flex justify-content-between align-items-center mb-5">
-                    <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                    <h6 class="mb-0 text-muted"><?php echo $getNumber->num_products; ?> items</h6>
-                  </div>
-
-
-                  <table class="table" height="190" >
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Total Price</th>
-                        <th scope="col">Update</th>
-                        <th scope="col"><button class="delete-all btn btn-danger text-white btn-sm ">Clear cart</button></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php if(count($allProducts) > 0): ?>
-                      <?php foreach($allProducts as $product): ?>
-                        <tr class="mb-4">
-                          <th scope="row"><?php echo $product->prod_id; ?></th>
-                          <td><img width="100" height="100"
-                          src="../images/<?php echo $product->prod_image; ?>"
-                          class="img-fluid rounded-3" alt="Cotton T-shirt">
-                          </td>
-                          <td><?php echo $product->prod_name; ?></td>
-                          <td class="price">
-                            <span class="prod_price"><?php echo $product->prod_price; ?></span>
-                            <span class="currency">$</span>
-                          </td>
-                          <td><input id="form1" min="1" name="quantity" value="<?php echo $product->prod_amount; ?>" type="number"
-                          class="form-control form-control-sm prod_amount" /></td>
-                          <td class="total_price"><?php echo $product->prod_price * $product->prod_amount; ?></td>
-                          <td><button value="<?php echo $product->id; ?>" class="btn-update btn btn-success text-white"><i class="fas fa-pen"></i> </button></td>
-                          <td><button value="<?php echo $product->id; ?>" class="btn btn-danger text-white btn-delete"><i class="fas fa-trash-alt"></i> </button></td>
-                        </tr>
-                      <?php endforeach; ?>
-                    <?php else: ?>
-                      <div class="alert alert-danger bg-danger text-white">
-                        <h3 class="text-center">Your cart is empty</h3>
-                      </div>
-                    <?php endif; ?>
-                      </div>
-                    </tbody>
-                  </table>
-                  <a href="<?php echo APPURL; ?>" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i>  Continue Shopping</a>
-                </div>
+<div class="container d-flex">
+  <div class="col-md-11 col-md-6">
+    <div class="card card-registration card-registration-2 shadow" style="border-radius: 18px;">
+      <div class="card-body p-0">
+        <div class="row g-0">
+          <div class="col-lg-20">
+            <div class="p-5">
+              <div class="d-flex justify-content-between mb-5">
+                <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                <h6 class="mb-0 text-muted"><?php echo $getNumber->num_products; ?> items</h6>
               </div>
-              <div class="col-lg-4 bg-grey">
-                <div class="p-5">
-                  <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
-                  <hr class="my-4">     
-                  <form method="POST" action="cart.php">
-                  <div class="d-flex justify-content-between mb-5">
-                    <h5 class="text-uppercase">Total price</h5>
-                    <h5 class="full_price"></h5>
-                    <input class="input_price" type="hidden" name="price">
-                  </div>
-                  <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Checkout</button>
-                </form>
-                </div>
+              <?php if(!empty($allProducts)): ?>
+              <table class="table" height="400">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Price</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($allProducts as $product): ?>
+                  <tr class="mb-4">
+                    <th scope="row"><?php echo $product->prod_id; ?></th>
+                    <td><img width="100" height="100" src="../images/<?php echo $product->prod_image; ?>" class="img-fluid rounded-3" alt="Cotton T-shirt"></td>
+                    <td><?php echo $product->prod_name; ?></td>
+                    <td class="price">
+                      <span class="prod_price"><?php echo $product->prod_price; ?></span>
+                      <span class="currency">$</span>
+                    </td>
+                    <td><input id="form1" min="1" name="quantity" value="<?php echo $product->prod_amount; ?>" type="number" class="form-control form-control-sm prod_amount" /></td>
+                    <td class="total_price"><?php echo $product->prod_price * $product->prod_amount; ?></td>
+                    <td><button value="<?php echo $product->id; ?>" class="btn-update btn btn-success text-white "><i class="fas fa-pen"></i> </button></td>
+                    <td><button value="<?php echo $product->id; ?>" class="btn btn-danger text-white btn-delete "><i class="fas fa-trash-alt"></i> </button></td>
+                  </tr>
+                  <?php endforeach ?>
+                </tbody>
+              </table>
+              <?php else: ?>
+              <div class="text-center p-5 fw-bold">
+                <h1><i class="fas fa-shopping-cart"></i></h1>
+                <h3>Cart is empty</h3>
+              </div>
+              <?php endif ?>
+              <div class="d-flex justify-content-between">
+                <a href="<?php echo APPURL; ?>" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                <button class="delete-all delete-all-items btn btn-danger text-white">Clear cart</button>
               </div>
             </div>
           </div>
         </div>
-       
       </div>
-
     </div>
-
+  </div>
+  <div class="col-md-2 ">
+    <div class="p-3 ">
+      <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+      <hr class="my-4">
+      <div class="summary">
+        <div class="d-flex justify-content-between mb-5">
+          <h5 class="text-uppercase">Total price</h5>
+          <span class="full_price fw-bold"></span>
+          <input class="input_price" type="hidden" name="price">
+        </div>
+        <form method="POST" action="cart.php">
+          <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg checkout" data-mdb-ripple-color="dark">Checkout</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <?php require '../includes/footer.php'; ?>
 
 <script>
@@ -111,7 +107,8 @@
                   var total = prod_amount * prod_price;
                   $el.find(".total_price").html("");        
 
-                  $el.find(".total_price").append(total+' $');
+                  $el.find(".total_price").append(total+'$');
+
 
 
                   //Update item
@@ -179,7 +176,20 @@
                   });
                   $(".full_price").html(sum+" $");
                   $(".input_price").val(sum);
-        }, 500);
+
+                  if($(".input_price").val() > 0) {
+                    $(".checkout").show();
+                  } else { 
+                    $(".checkout").hide();
+                  }
+
+                  if($(".prod_amount").val() > 0){
+                    $(".delete-all-items").show();
+                  } else { 
+                    $(".delete-all-items").hide();
+                  }
+              
+        }, );
       } 
       
       function reload() {      
