@@ -55,8 +55,8 @@
                     </td>
                     <td><input id="form1" min="1" name="quantity" value="<?php echo $product->prod_amount; ?>" type="number" class="form-control form-control-sm prod_amount" /></td>
                     <td class="total_price"><?php echo $product->prod_price * $product->prod_amount; ?></td>
-                    <td><button value="<?php echo $product->id; ?>" class="btn-update btn btn-success text-white "><i class="fas fa-pen"></i> </button></td>
-                    <td><button value="<?php echo $product->id; ?>" class="btn btn-danger text-white btn-delete "><i class="fas fa-trash-alt"></i> </button></td>
+                    <td><button value="<?php echo $product->id; ?>" class="btn-update btn btn-success text-white "><i class="fa-solid fa-pen"></i></button></td>
+                    <td><button value="<?php echo $product->id; ?>" class="btn btn-danger text-white btn-delete "><i class="fa-solid fa-trash"></i></button></td>
                   </tr>
                   <?php endforeach ?>
                 </tbody>
