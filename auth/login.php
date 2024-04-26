@@ -35,7 +35,7 @@
     }
 
 ?>
-<div class="container">
+<div class="container ">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form class="form-control mt-5" method="POST" action="login.php">

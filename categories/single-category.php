@@ -1,11 +1,18 @@
-<?php require 'includes/header.php'; ?>   
-<?php require 'config/config.php'; ?>
+<?php require '../includes/header.php'; ?>   
+<?php require '../config/config.php'; ?>
 <?php
 
-        $rows = $conn->query("SELECT * FROM products WHERE status = 1");
+
+    if(isset($_GET['id'])) {
+
+        $id = $_GET['id'];
+        
+        $rows = $conn->query("SELECT * FROM products WHERE status = 1 AND category_id = '$id'");
         $rows->execute();
 
         $allRows = $rows->fetchAll(PDO::FETCH_OBJ);
+    }
+
  ?>
         <div class="container">
             <div class="row mt-5">
@@ -37,4 +44,4 @@
                 <?php endforeach; ?>
             </div>
         </div>
-        <?php require 'includes/footer.php'; ?>
+        <?php require '../includes/footer.php'; ?>
