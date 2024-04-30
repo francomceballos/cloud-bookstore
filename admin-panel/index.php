@@ -31,38 +31,21 @@
 
     <!-- admin-panel/index.html -->
     <div class="container-fluid">
-            
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card rounded-4 shadow">
-            <div class="card-body">
-              <h5 class="card-title">Products</h5>
-              <p class="card-text">number of products: <?php echo $allProducts->products_count ?></p>
-             
-            </div>
-          </div>
+        <div class="row">
+            <?php foreach(array(
+                'products' => $allProducts->products_count,
+                'categories' => $allCategories->categories_count,
+                'admins' => $allAdmins->admins_count
+            ) as $title => $count): ?>
+                <div class="col-md-4">
+                    <div class="card rounded-4 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo ucfirst($title) ?></h5>
+                            <p class="card-text">Number of <?php echo ucfirst($title) ?>: <?php echo $count ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
-        <div class="col-md-4">
-          <div class="card rounded-4 shadow">
-            <div class="card-body">
-              <h5 class="card-title">Categories</h5>
-              
-              <p class="card-text">number of categories: <?php echo $allCategories->categories_count ?></p>
-              
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card rounded-4 shadow">
-            <div class="card-body">
-              <h5 class="card-title">Admins</h5>
-              
-              <p class="card-text">number of admins: <?php echo $allAdmins->admins_count ?></p>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-  
           
 <?php require 'includes/footer.php'; ?>

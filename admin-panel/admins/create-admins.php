@@ -51,7 +51,7 @@
                   <input type="password" name="password" id="password" placeholder="password" class="form-control" required>
                 </div>
                 <div class="mb-4">
-                  <button type="submit" name="submit" class="btn btn-primary">Create</button>
+                  <button type="submit" name="submit" class="btn btn-primary btn-lg rounded-pill">Create</button>
                 </div>
               </form>
             </div>

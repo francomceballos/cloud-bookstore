@@ -17,7 +17,7 @@
                 <div class="card rounded-4 shadow">
                     <div class="card-body">
                         <h5 class="card-title mb-5 d-inline">Admins</h5>
-                        <a href="<?php echo ADMINURL; ?>/admins/create-admins.php" class="btn btn-primary mb-4 float-end">Create Admins</a>
+                        <a href="<?php echo ADMINURL; ?>/admins/create-admins.php" class="btn btn-primary mb-4 float-end btn-lg rounded-pill">Create Admins</a>
                         <table class="table mb-5 table-hover">
                             <thead>
                                 <tr>
