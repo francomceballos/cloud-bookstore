@@ -3,6 +3,9 @@
 
 
 <?php
+        if(!isset($_SESSION['admin_name'])) {
+            header('location: '.ADMINURL. "/admins/login-admins.php");     
+        }
 
 
     $select = $conn->query("SELECT * FROM categories");

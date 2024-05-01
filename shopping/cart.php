@@ -14,6 +14,7 @@
 
 
   if(isset($_POST['submit'])) {
+    
     $price = $_POST['price'];
 
     $_SESSION['price'] = $price;
@@ -22,6 +23,7 @@
   }
 
 ?>
+
 <div class="container d-flex">
   <div class="col-md-11 col-md-6">
     <div class="card rounded-4 shadow mb-5 mt-5">
@@ -130,13 +132,13 @@
     <div class="p-3 ">
       <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
       <hr class="my-4">
+      <form method="POST" action="cart.php">
       <div class="summary">
         <div class="d-flex justify-content-between mb-5">
           <h5 class="text-uppercase">Total price</h5>
           <span class="full_price fw-bold"></span>
           <input class="input_price" type="hidden" name="price">
         </div>
-        <form method="POST" action="cart.php">
           <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg checkout" data-mdb-ripple-color="dark">Checkout</button>
         </form>
       </div>

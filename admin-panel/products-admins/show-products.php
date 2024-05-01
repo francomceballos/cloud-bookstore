@@ -2,6 +2,9 @@
 <?php require "../../config/config.php"; ?> 
 
 <?php
+    if(!isset($_SESSION['admin_name'])) {
+        header('location: '.ADMINURL. "/admins/login-admins.php");     
+    }
 
     $select = $conn->query("SELECT * FROM products");
     $select->execute();
@@ -18,7 +21,7 @@
             <div class="col">
                 <div class="card rounded-4 shadow">
                     <div class="card-body">
-                        <h5 class="card-title mb-4 d-inline">Products</h5>
+                        <h3 class="card-title mb-4 d-inline">Products</h3>
                         <a href="<?php echo ADMINURL; ?>/products-admins/create-products.php" 
                         class="btn btn-primary mb-4 float-end btn-lg rounded-pill">
                         Create Products</a>
@@ -40,11 +43,15 @@
                                         <td><?php echo $product->name; ?></td>
                                         <td><?php echo $product->price; ?></td>
                                         <td><?php echo $product->category; ?></td>
-                                        <?php if ($product->status == 1): ?>
-                                        <td><a href="<?php echo ADMINURL; ?>/products-admins/status.php?id=<?php echo $product->id; ?>&status=<?php echo $product->status; ?>" class="btn btn-success rounded-pill w-50">Available</a></td>
-                                        <?php else: ?>
-                                        <td><a href="<?php echo ADMINURL; ?>/products-admins/status.php?id=<?php echo $product->id; ?>&status=<?php echo $product->status; ?>" class="btn btn-danger rounded-pill w-50">Not Available</a></td>
-                                        <?php endif; ?>
+                                        <?php 
+                                        $btnClass = ($product->status == 1) ? 'btn-success' : 'btn-danger'; 
+                                        $btnText = ($product->status == 1) ? 'Available' : 'Not Available'; 
+                                        ?>
+                                        <td>
+                                            <a href="<?php echo ADMINURL; ?>/products-admins/status.php?id=<?php echo $product->id; ?>&status=<?php echo $product->status; ?>" 
+                                            class="btn <?php echo $btnClass; ?> rounded-pill w-50" style="min-width:120px;">
+                                            <?php echo $btnText; ?></a>
+                                        </td>
                                         <td>
                                             <!-- Modal triggered by a button -->
                                             <button type="button" 

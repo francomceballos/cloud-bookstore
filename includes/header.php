@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-dark" >
     <div class="container" style="margin-top: none">
-        <a class="navbar-brand  text-white" href=" <?php echo APPURL; ?>">Bookstore</a>
+        <a class="navbar-brand text-white" href=" <?php echo APPURL; ?>"><h2>Bookstore</h2></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +43,7 @@
             <a class="nav-link active  text-white" aria-current="page" href="<?php echo APPURL; ?>">Home</a>
             </li>
             <li class="nav-item ">
-            <a class="nav-link  text-white" href=" <?php echo APPURL; ?>/contact.php">Contact</a>
+            <a class="nav-link  text-white " aria-current="page" href=" <?php echo APPURL; ?>/contact.php">Contact</a>
             </li>
             <li class="nav-item">
             <a class="nav-link active  text-white" aria-current="page" href=" <?php echo APPURL; ?>/categories/index.php">Categories</a>

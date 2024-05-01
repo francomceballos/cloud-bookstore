@@ -16,7 +16,7 @@
                                 height="213px"
                                 style="object-fit: cover;"
                                 src="<?php echo APPURL; ?>/images/<?php echo htmlspecialchars($product->image, ENT_QUOTES, 'UTF-8'); ?>" 
-                                class="card-img-top h-100"
+                                class="card-img-top h-100 img-fluid"
                                 alt="<?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?>"
                             >
                             <div class="card-body d-flex flex-column">
