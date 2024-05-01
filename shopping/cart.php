@@ -24,7 +24,7 @@
 ?>
 <div class="container d-flex">
   <div class="col-md-11 col-md-6">
-    <div class="card card-registration card-registration-2 shadow" style="border-radius: 18px;">
+    <div class="card rounded-4 shadow mb-5 mt-5">
       <div class="card-body p-0">
         <div class="row g-0">
           <div class="col-lg-20">
@@ -43,7 +43,6 @@
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Total Price</th>
-                    <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                   </tr>
                 </thead>
@@ -57,10 +56,56 @@
                       <span class="prod_price"><?php echo $product->prod_price; ?></span>
                       <span class="currency">$</span>
                     </td>
-                    <td><input id="form1" min="1" name="quantity" value="<?php echo $product->prod_amount; ?>" type="number" class="form-control form-control-sm prod_amount" /></td>
+                    <td><input id="form1"       
+                    min="1" 
+                    name="quantity"
+                    value="<?php echo $product->prod_amount; ?>" 
+                    type="number" class="form-control form-control-sm prod_amount" 
+                    onchange="updateAmount(this, '<?php echo $product->id; ?>', '<?php echo $_SESSION['user_id']; ?>')" />
+                  </td>
                     <td class="total_price"><?php echo $product->prod_price * $product->prod_amount; ?></td>
-                    <td><button value="<?php echo $product->id; ?>" class="btn-update btn btn-success text-white "><i class="fa-solid fa-pen"></i></button></td>
-                    <td><button value="<?php echo $product->id; ?>" class="btn btn-danger text-white btn-delete "><i class="fa-solid fa-trash"></i></button></td>
+                    <td>
+                      <!-- Button to trigger modal -->
+                      <button type="button" 
+                      class="btn btn-danger text-white btn-delete-item" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#deleteModal<?php echo $product->id; ?>">
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" 
+                      id="deleteModal<?php echo $product->id; ?>" 
+                      tabindex="-1" 
+                      aria-labelledby="deleteModalLabel" 
+                      aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" 
+                              id="deleteModalLabel">Delete Confirmation</h5>
+                              <button type="button" 
+                              class="btn-close" 
+                              data-bs-dismiss="modal" 
+                              aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Are you sure you want to delete this item?
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" 
+                              class="btn btn-secondary" 
+                              data-bs-dismiss="modal">Close</button>
+                              <button type="button" 
+                              value="<?php echo $product->id; ?>" 
+                              class="btn btn-danger text-white btn-delete ">
+                                Delete
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <?php endforeach ?>
                 </tbody>
@@ -147,7 +192,6 @@
                       id: id
                     },
                     success: function() {
-                      alert("products deleted successfully");
                       reload();
                     }
                   })
@@ -200,4 +244,21 @@
             $("body").load("cart.php")    
       }
 });
+
+                function updateAmount(element, id, user_id) {
+                  var prod_amount = element.value;
+                  var xhr = new XMLHttpRequest();
+                  xhr.open("POST", "update-item.php", true);
+                  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                  xhr.onreadystatechange = function() {
+                    if(xhr.readyState === 4 && xhr.status === 200) {
+                      //alert(xhr.responseText);
+                      reload();
+                    }
+                  };
+                  xhr.send("update=update&id="+id+"&user_id="+user_id+"&prod_amount="+prod_amount);
+                }
+                function reload() {      
+                  $("body").load("cart.php")    
+                }
 </script>

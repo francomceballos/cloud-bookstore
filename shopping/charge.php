@@ -1,10 +1,7 @@
 <?php require "../includes/header.php"; ?>
 <?php require "../config/config.php"; ?>
 <?php require "../vendor/autoload.php"; ?>
-<div class="container">
 <?php
-
-
 
     /* at the top of 'check.php' */
     if ($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
@@ -21,38 +18,49 @@
     }
 
 
-if (isset($_POST['email'])) {
-    if (empty($_POST['email']) || empty($_POST['username']) ||
-        empty($_POST['first_name']) || empty($_POST['last_name'])) {
-        echo '<script> alert("All fields are required") </script>';
-        return;
-    }
+    if(isset($_POST['email'])) {
 
-    \Stripe\Stripe::setApiKey($secretKey);
-
-    $charge = \Stripe\Charge::create([
-        'source' => $_POST['stripeToken'],
-        'amount' => $_SESSION['price'] * 100,
-        'currency' => 'usd',
-    ]);
-
-    $data = [
-        ':email' => $_POST['email'],
-        ':username' => $_POST['username'],
-        ':first_name' => $_POST['first_name'],
-        ':last_name' => $_POST['last_name'],
-        ':token' => $_POST['stripeToken'],
-        ':price' => $_SESSION['price'],
-        ':user_id' => $_SESSION['user_id'],
-    ];
-
-    $insert = $conn->prepare(
-        "INSERT INTO orders (email, username, first_name, last_name, token, price, user_id) 
-        VALUES (:username, :email, :first_name, :last_name, :token, :price, :user_id)"
-    );
-
-    $insert->execute($data);
-
-    header("location: " . APPURL . "/download.php");
-}
-
+        \Stripe\Stripe::setApiKey($secret_key);
+  
+        $charge = \Stripe\Charge::create([
+  
+            'source' => $_POST['stripeToken'],
+            
+            'amount' => $_SESSION['price'] * 100,
+            'currency' => 'usd',
+          
+          ]);
+  
+          echo "paid";
+  
+          if(empty($_POST['email']) OR empty($_POST['username']) OR empty($_POST['first_name'])
+          OR empty($_POST['last_name'])) {
+            echo "<script>alert('one or more inputs are empty');</script>";
+        } else {
+  
+          $email = $_POST['email'];
+          $username = $_POST['username'];
+          $first_name = $_POST['first_name'];
+          $last_name = $_POST['last_name'];
+          $price = $_SESSION['price'];
+          $token = $_POST['stripeToken'];
+          $user_id = $_SESSION['user_id'];
+  
+          $insert = $conn->prepare("INSERT INTO orders (email, username, first_name, last_name, token, price, user_id)
+          VALUES(:email, :username, :first_name, :last_name, :token, :price, :user_id)");
+  
+          $insert->execute([
+            ':email' => $email,
+            ':username' => $username,
+            ':first_name' => $first_name,
+            ':last_name' => $last_name,
+            ':token' => $token,
+            ':price' => $price,
+            ':user_id' => $user_id,
+          ]);
+  
+          header("location: ".APPURL."/download.php");
+  
+        }
+  
+      }

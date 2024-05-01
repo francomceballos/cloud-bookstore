@@ -39,13 +39,13 @@
 ?>
 
 
-
+<div class="container my-5">
 <div class="container-fluid"> 
   <div class="row">
     <div class="col">
       <div class="card rounded-4 shadow">
         <div class="card-body">
-          <h5 class=" mt-5 text-center mb-4">Login</h5>
+          <h2 class=" mt-5 text-center mb-4">Login</h2>
           <form method="POST" action="login-admins.php" class="p-4">
             <div class="form-outline mb-4">
               <input 
@@ -70,7 +70,7 @@
             <button 
               type="submit" 
               name="submit" 
-              class="btn btn-primary w-100 mb-4"
+              class="btn btn-primary w-100 mb-4 mt-4 rounded-pill"
             >
               Login
             </button>
@@ -79,6 +79,7 @@
       </div>
     </div>
   </div>
+</div>
 
 
 <?php include '../includes/footer.php'; ?>
