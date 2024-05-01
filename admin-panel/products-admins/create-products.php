@@ -3,6 +3,11 @@
 
 <?php
 
+      $select = $conn->query("SELECT * FROM categories");
+      $select->execute();
+      $allCategories = $select->fetchAll(PDO::FETCH_OBJ);
+
+
       if(isset($_POST['submit'])) {
         if(empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price']) || empty($_POST['category_id']) || empty($_POST['category'])) {
           echo "<script>alert('one or more inputs are empty');</script>";
@@ -66,22 +71,24 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1"><h6>Select Category</h6></label>
-                    <select name="category" class="form-control" id="exampleFormControlSelect1">
-                      <option>--select category--</option>           
-                      <option value="Programming">Programming</option>
-                      <option value="Design">Design</option>
-                    </select>
-                  </div>
+                  <label for="categorySelect"><h6>Select Category</h6></label>
+                  <select name="category" id="categorySelect" class="form-control">
+                    <option value="">--select category--</option> 
+                    <?php foreach($allCategories as $category): ?>
+                      <option value="<?php echo $category->name; ?>"><?php echo $category->name; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
 
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1"><h6>Select Category</label>
-                    <select name="category_id" class="form-control" id="exampleFormControlSelect1">
-                      <option>--select category--</option>           
-                      <option value="1">Programming</option>
-                      <option value="2">Design</option>
-                    </select>
-                  </div>
+                <div class="form-group">
+                  <label for="categorySelect"><h6>Select Category</h6></label>
+                  <select name="category_id" id="categorySelect" class="form-control">
+                    <option value="">--select category--</option> 
+                    <?php foreach($allCategories as $category): ?>
+                      <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
 
                 <div class="form-outline mb-4 mt-4">
                     <label><h6>Product Image</h6></label>

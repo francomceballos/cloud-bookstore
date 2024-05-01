@@ -15,41 +15,37 @@
 
     if(!isset($_SESSION['username'])) {
         header('location: '.APPURL. "");
+        return;
     }
 
 
     if(isset($_POST['email'])) {
 
+        if(empty($_POST['email']) || empty($_POST['username']) || empty($_POST['first_name']) || empty($_POST['last_name'])) {
+            echo "<script>alert('one or more inputs are empty');</script>";
+            return;
+        }
+
         \Stripe\Stripe::setApiKey($secret_key);
   
         $charge = \Stripe\Charge::create([
-  
             'source' => $_POST['stripeToken'],
-            
             'amount' => $_SESSION['price'] * 100,
             'currency' => 'usd',
-          
-          ]);
+        ]);
   
-          echo "paid";
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $price = $_SESSION['price'];
+        $token = $_POST['stripeToken'];
+        $user_id = $_SESSION['user_id'];
   
-          if(empty($_POST['email']) OR empty($_POST['username']) OR empty($_POST['first_name'])
-          OR empty($_POST['last_name'])) {
-            echo "<script>alert('one or more inputs are empty');</script>";
-        } else {
+        $insert = $conn->prepare("INSERT INTO orders (email, username, first_name, last_name, token, price, user_id)
+            VALUES(:email, :username, :first_name, :last_name, :token, :price, :user_id)");
   
-          $email = $_POST['email'];
-          $username = $_POST['username'];
-          $first_name = $_POST['first_name'];
-          $last_name = $_POST['last_name'];
-          $price = $_SESSION['price'];
-          $token = $_POST['stripeToken'];
-          $user_id = $_SESSION['user_id'];
-  
-          $insert = $conn->prepare("INSERT INTO orders (email, username, first_name, last_name, token, price, user_id)
-          VALUES(:email, :username, :first_name, :last_name, :token, :price, :user_id)");
-  
-          $insert->execute([
+        $insert->execute([
             ':email' => $email,
             ':username' => $username,
             ':first_name' => $first_name,
@@ -57,10 +53,7 @@
             ':token' => $token,
             ':price' => $price,
             ':user_id' => $user_id,
-          ]);
+        ]);
   
-          header("location: ".APPURL."/download.php");
-  
-        }
-  
-      }
+        header("location: ".APPURL."/download.php");
+    }

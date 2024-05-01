@@ -40,8 +40,11 @@
                                         <td><?php echo $product->name; ?></td>
                                         <td><?php echo $product->price; ?></td>
                                         <td><?php echo $product->category; ?></td>
-                                        <td><a href="#" 
-                                        class="btn btn-success text-center">Verified</a></td>
+                                        <?php if ($product->status == 1): ?>
+                                        <td><a href="<?php echo ADMINURL; ?>/products-admins/status.php?id=<?php echo $product->id; ?>&status=<?php echo $product->status; ?>" class="btn btn-success rounded-pill w-50">Available</a></td>
+                                        <?php else: ?>
+                                        <td><a href="<?php echo ADMINURL; ?>/products-admins/status.php?id=<?php echo $product->id; ?>&status=<?php echo $product->status; ?>" class="btn btn-danger rounded-pill w-50">Not Available</a></td>
+                                        <?php endif; ?>
                                         <td>
                                             <!-- Modal triggered by a button -->
                                             <button type="button" 
