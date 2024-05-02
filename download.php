@@ -14,8 +14,9 @@
         }
         $zip->close();
 
-
-        header('Content-Type: application/zip');
+        ob_clean();
+        ob_end_flush();
+        header('Content-Type: application/zip;\n');
         header('Content-disposition: attachment; filename='.$zipname);
         readfile($zipname);
 

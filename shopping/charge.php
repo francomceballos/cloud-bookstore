@@ -22,7 +22,7 @@
 
     if(isset($_POST['email'])) {
 
-      \Stripe\Stripe::setApiKey($secret_key);
+      \Stripe\Stripe::setApiKey($secretKey);
 
       $charge = \Stripe\Charge::create([
 

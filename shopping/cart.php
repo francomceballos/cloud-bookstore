@@ -128,7 +128,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-2 ">
+  <div class="col-md-2 d-none d-md-block mt-5" style="background-color: #f5f5f5;">
     <div class="p-3 ">
       <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
       <hr class="my-4">
