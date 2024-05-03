@@ -14,14 +14,15 @@
         }
         $zip->close();
 
-        ob_clean();
-        ob_end_flush();
-        header("Cache-Control: no-cache, must-revalidate");
-        header('Content-Type: application/zip;\n');
-        header("Content-Transfer-Encoding: Binary");
+ 
+
+
+        header('Content-Type: application/zip; \n');
         header("Content-Disposition: attachment; filename=\"".basename($zipname)."\"");
         readfile($zipname);
         unlink($zipname);
 
         $select = $conn->query("DELETE FROM cart WHERE user_id='$_SESSION[user_id]'");
         $select->execute();
+
+        header("Location: index.php");
