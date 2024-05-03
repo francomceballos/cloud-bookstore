@@ -19,12 +19,13 @@
 
 ?>
 
-    <div class="container" style="font-family: 'Fira Sans', sans-serif">
-        <div class="row mt-5 mb-5" style="background-color: #f5f5f5; margin-bottom: 100px">
+    <div class="container" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px; margin-top: 100px">
+        <div class="row mt-5 mb-5">
             <div class="col">
-                <div class="card rounded-4 shadow mt-5">
+                <?php if(!empty($orders)): ?>
+                <div class="card rounded-4 shadow">
                     <div class="card-body">
-                        <h3 class="card-title d-inline mt-5">My orders</h3>
+                        <h3 class="card-title d-inline">My orders</h3>
                         <table class="table mb-5 table-hover">
                             <thead>
                                 <tr>
@@ -55,6 +56,13 @@
                         </table>
                     </div>
                 </div>
+                <?php else: ?>
+                    <div class="card rounded-4 shadow">
+                        <div class="card-body">
+                            <h1 class="card-title d-inline">There are no orders</h1>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
        
        <footer class="text-white text-center text-lg-start" style="background-color: #0D0630; margin-top: 40px; font-family: 'Fira Sans', sans-serif"">
        <!-- Grid container -->
-       <div class="container p-4">
+       <div class="container p-4" style="margin-top: 600px">
            <!--Grid row-->
            <div class="row">
            <!--Grid column-->

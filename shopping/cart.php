@@ -24,19 +24,19 @@
 
 ?>
 
-<div class="container d-flex justify-content-center" style="font-family: 'Fira Sans', sans-serif">
-  <div class="col-md-11 col-md-6" style="margin-bottom: 100px">
+<div class="container d-flex " style="font-family: 'Fira Sans', sans-serif">
+  <div class="col-md-11">
     <div class="card rounded-4 shadow mb-5 mt-5" >
-      <div class="card-body p-0" >
+      <div class="card-body">
         <div class="row g-0" >
           <div class="col-lg-20">
-            <div class="p-5">
-              <div class="d-flex justify-content-between mb-5">
-                <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                <h6 class="mb-0 text-muted"><?php echo $getNumber->num_products; ?> items</h6>
+            <div class="p-5 mb-5 ">
+              <div class="d-flex justify-content-between align-items-center mb-5 ">
+                <h1 class="fw-bold text-black">Shopping Cart</h1>
+                <h6 class="mb-0 text-muted justify-content-end"><?php echo $getNumber->num_products; ?> items</h6>
               </div>
               <?php if(!empty($allProducts)): ?>
-              <table class="table" height="400">
+              <table class="table table-light table-hover" height="100">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -118,9 +118,9 @@
                 <h3>Cart is empty</h3>
               </div>
               <?php endif ?>
-              <div class="d-flex justify-content-between">
-                <a href="<?php echo APPURL; ?>" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
-                <button class="delete-all delete-all-items btn btn-danger text-white">Clear cart</button>
+              <div class=" d-flex justify-content-between">
+                <a href="<?php echo APPURL; ?>" class="btn btn-light text-white"  style="background-color: #384E77;"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                <button class="delete-all delete-all-items btn btn-danger">Clear cart</button>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-2 d-none d-md-block mt-5" style="margin-bottom: 100px"">
+  <div class="col-md-2 d-none d-md-block mt-5" style="margin-left: 150px; margin-top: 300px;">
     <div class="p-3 ">
       <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
       <hr class="my-4">

@@ -19,8 +19,8 @@
 ?>
 
 <div class="container mt-5 mb-5" style="font-family: 'Fira Sans', sans-serif">
-  <h2 class="my-5 h2 text-center">Checkout</h2>
-  <form class="card-body row" method="POST" action="charge.php" style="background-color: #f5f5f5; margin-bottom: 100px">
+  <h2 class="text-center mb-5">Checkout</h2>
+  <form class="card-body row" method="POST" action="charge.php" style=" margin-bottom: 100px">
     <div class="col-md-10 mb-4">
       <div class="card rounded-4 shadow">
         <div class="card-body">
@@ -28,13 +28,13 @@
             <div class="col-md-6">
               <div class="md-form mb-4">
                 <label for="first_name">First Name</label>
-                <input type="text" id="first_name" name="first_name" class="form-control validate" required>
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" class="form-control validate" required>
               </div>
             </div>
             <div class="col-md-6">
               <div class="md-form mb-4">
                 <label for="last_name">Last Name</label>
-                <input type="text" id="last_name" name="last_name" class="form-control validate" required>
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" class="form-control validate" required>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@
         </div>      
       </div>
     </div>
-    <div class="col-md-2" style=" ; margin-bottom: 100px">
+    <div class="col-md-2" style="margin-top: 50px">
       <div class="p-3">
         <h1 class="fw-bold mb-5 mt-2 pt-1">Summary</h1>
         <hr class="my-4">

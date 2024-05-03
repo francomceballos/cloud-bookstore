@@ -11,9 +11,9 @@
     <div class="row mt-5" style="margin-bottom: 100px">
         <?php foreach ($allRows as $product): ?>
             <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-4">
-                 <div class="card h-100 rounded-4 shadow">
+                 <div class="card h-100 rounded-4 shadow border-0">
                     <img 
-                            class="card-img-top h-100 img-fluid"
+                            class="card-img-top "
                             src="<?php echo APPURL; ?>/images/<?php echo htmlspecialchars($product->image, ENT_QUOTES, 'UTF-8'); ?>" 
                             style="height: 213px; object-fit: cover;" 
                             alt="<?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?>"
