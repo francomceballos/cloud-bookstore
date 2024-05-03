@@ -97,10 +97,29 @@
                                                 name="submit" 
                                                 type="submit" 
                                                 class="btn btn-dark text-uppercase mr-2 px-4 rounded-pill" 
-                                                style="background-color: #0D0630;">
+                                                style="background-color: #0D0630;"
+                                                data-toggle="modal" 
+                                                data-target="#myModal">
                                             <i class="fas fa-shopping-cart"></i> Add to cart
                                         </button> 
                                     </form>
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body text-center">
+                                                    <h5>Product added to cart</h5>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" 
+                                                            class="btn btn-dark" 
+                                                            data-dismiss="modal" 
+                                                            style="background-color: #0D0630;">
+                                                        Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php endif; ?>
                             <?php endif; ?>
                         </div>
@@ -110,7 +129,6 @@
         </div>
     </div>
 </div>
-
 
 <?php require '../includes/footer.php'; ?>
 
@@ -125,7 +143,7 @@
                 url: "single.php?id=<?php echo $id; ?>",
                 data: $formdata,
                 success: function() {
-                    alert("Product added to cart successfully");
+                    
                     $("#submit").html("<i class='fas fa-shopping-cart'></i> Added to cart").prop("disabled", true);
                     refresh();
                 }

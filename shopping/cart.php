@@ -42,7 +42,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Image</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Individual price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Total Price</th>
                     <th scope="col">Delete</th>
@@ -65,7 +65,7 @@
                     type="number" class="form-control form-control-sm prod_amount" 
                     onchange="updateAmount(this, '<?php echo $product->id; ?>', '<?php echo $_SESSION['user_id']; ?>')" />
                   </td>
-                    <td class="total_price"><?php echo $product->prod_price * $product->prod_amount; ?></td>
+                    <td class="total_price"><?php echo $product->prod_price * $product->prod_amount; ?>$</td>
                     <td>
                       <!-- Button to trigger modal -->
                       <button type="button" 
@@ -118,33 +118,43 @@
                 <h3>Cart is empty</h3>
               </div>
               <?php endif ?>
-              <div class=" d-flex justify-content-between">
-                <a href="<?php echo APPURL; ?>" class="btn btn-light text-white"  style="background-color: #384E77;"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
-                <button class="delete-all delete-all-items btn btn-danger">Clear cart</button>
-              </div>
+            </div>
+            <div class=" d-flex justify-content-between">
+                <a href="<?php echo APPURL; ?>" class="btn btn-light text-white rounded-pill"  style="background-color: #384E77;"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                <button class="delete-all delete-all-items btn btn-danger rounded-pill">Clear cart</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-2 d-none d-md-block mt-5" style="margin-left: 150px; margin-top: 300px;">
-    <div class="p-3 ">
-      <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
-      <hr class="my-4">
-      <form method="POST" action="cart.php">
-      <div class="summary">
-        <div class="d-flex justify-content-between mb-5">
-          <h5 class="text-uppercase">Total price</h5>
-          <span class="full_price fw-bold"></span>
-          <input class="input_price" type="hidden" name="price">
+  <div class="col-md-2 d-none d-md-block mt-5 d-flex" style="margin-left: 120px; margin-top: 100px;">
+    <div class="p-1" style="margin-top: 50px;">
+      <div class="card rounded-4 shadow mb-5 mt-5">
+        <div class="card-body">
+          <h2 class="fw-bold mb-5 mt-2 pt-1">Summary</h2>
+          <hr class="my-4">
+          <form method="POST" action="cart.php">
+            <div class="summary">
+              <div class="d-flex justify-content-between mb-5">
+                <h3 class="text-uppercase">Total price</h3>
+                <input class="input_price" type="hidden" name="price">
+              </div>
+              <div>
+                <span class="full_price fw-bold mb-5 d-flex justify-content-center h1"></span>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg checkout rounded-pill" style="background-color: #0D0630; data-mdb-ripple-color="dark">Checkout</button>
+              </div>
+          </form>
         </div>
-          <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg checkout" style="background-color: #0D0630; data-mdb-ripple-color="dark">Checkout</button>
-        </form>
       </div>
     </div>
   </div>
 </div>
+</div>
+
+
 <?php require '../includes/footer.php'; ?>
 
 <script>
@@ -242,10 +252,10 @@
         }, );
       } 
       
-      function reload() {      
-            $("body").load("cart.php")    
-      }
-});
+                  function reload() {      
+                        $("body").load("cart.php")    
+                  }
+                  });
 
                 function updateAmount(element, id, user_id) {
                   var prod_amount = element.value;

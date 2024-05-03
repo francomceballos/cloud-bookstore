@@ -21,7 +21,7 @@
 <div class="container mt-5 mb-5" style="font-family: 'Fira Sans', sans-serif">
   <h2 class="text-center mb-5">Checkout</h2>
   <form class="card-body row" method="POST" action="charge.php" style=" margin-bottom: 100px">
-    <div class="col-md-10 mb-4">
+    <div class="col-md-9 mb-4">
       <div class="card rounded-4 shadow">
         <div class="card-body">
           <div class="row" >
@@ -60,15 +60,17 @@
         </div>      
       </div>
     </div>
-    <div class="col-md-2" style="margin-top: 50px">
-      <div class="p-3">
-        <h1 class="fw-bold mb-5 mt-2 pt-1">Summary</h1>
-        <hr class="my-4">
-        <div class="summary">
-          <div class="">
-            <h3 class="text-uppercase text-center"> Total price:</h3>
-            <h3 class="text-uppercase text-center fw-bold"><?php echo $_SESSION['price']?>$</h3>
-            <input class="input-price" type="hidden" name="price" value="<?php echo $_SESSION['price'] * 100?>">
+    <div class="col-md-3" style="margin-top: 0px">
+      <div class="card rounded-4 shadow p-3">
+        <div class="card-body" >
+          <h1 class="fw-bold">Summary</h1>
+          <hr class="my-4">
+          <div class="summary">
+            <div class="">
+              <h3 class="text-uppercase text-center"> Total price:</h3>
+              <h3 class="text-uppercase text-center fw-bold"><?php echo $_SESSION['price']?>$</h3>
+              <input class="input-price" type="hidden" name="price" value="<?php echo $_SESSION['price'] * 100?>">
+            </div>
           </div>
         </div>
       </div>

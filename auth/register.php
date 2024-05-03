@@ -49,7 +49,7 @@
             <input type="password" class="form-control" id="password" name="password">
           </div>
           <div class="form-group mb-3">
-            <button type="submit" class="w-100 btn btn-lg btn-dark" style="background-color: #0D0630" name="submit">Register</button>
+            <button type="submit" class="w-100 btn btn-lg btn-dark rounded-pill" style="background-color: #0D0630" name="submit">Register</button>
           </div>
         </form>
       </div>

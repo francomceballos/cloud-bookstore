@@ -36,22 +36,27 @@
 
 ?>
 <div class="container ">
-        <div class="row justify-content-center">
-            <div class="col-md-9">
-                <form class="form-control mt-5 border  rounded-4 shadow" method="POST" action="login.php">
-                    <h3 class="text-center mt-3">Login</h3>
-                    <div class="mb-3">
-                        <label for="inputEmail" class="form-label"><h6>Email</h6></label>
-                        <input type="email" name="email" class="form-control" placeholder=" Please insert your email" id="inputEmail" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputPassword" class="form-label"><h6>Password</h6></label>
-                        <input type="password" name="password" class="form-control" placeholder="Please insert your password" id="inputPassword" required>
-                    </div>
-                    <div class="d-flex justify-content-center mb-3 mt-5">
-                        <button class="w-50 btn btn-dark" style="background-color: #384E77; margin-bottom: 5px; margin-top: 5px" name="submit" type="submit">Login</button>
-                    </div>
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+      <div class="card rounded-4 shadow mt-5 mb-5">
+        <div class="card-body">
+          <form class="mt-4" method="POST" action="login.php">
+            <h2 class="text-center mb-4">Login</h2>
+            <div class="form-group mt-4 mb-4">
+              <label for="inputEmail" class="form-label"><h6>Email</h6></label>
+              <input type="email" name="email" class="form-control" placeholder=" Please insert your email" id="inputEmail" required>
             </div>
+            <div class="form-group mt-4 mb-4">
+              <label for="inputPassword" class="form-label"><h6>Password</h6></label>
+              <input type="password" name="password" class="form-control" placeholder="Please insert your password" id="inputPassword" required>
+            </div>
+            <div class="text-center mt-4 mb-2">
+              <button class="btn btn-dark rounded-pill w-100 btn-lg" style="background-color: #0D0630; margin-bottom: 5px; margin-top: 5px" name="submit" type="submit">Login</button>
+            </div>
+          </form>
         </div>
+      </div>
+    </div>
+  </div>
 </div>
 <?php require '../includes/footer.php'; ?>
