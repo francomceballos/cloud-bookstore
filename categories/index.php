@@ -12,8 +12,8 @@
 
 ?>
 
-    <div class="container">  
-        <div class="row mt-5">
+    <div class="container" style="font-family: 'Fira Sans', sans-serif">  
+        <div class="row mt-5" style="margin-bottom: 100px">
             <div class="row">
                 <?php foreach ($allCategories as $category): ?>
                     <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-4">
@@ -29,7 +29,7 @@
                                 <p class="card-text"><?php echo substr($category->description , 0 , 300) . ' ...'; ?></p> 
                                 <a 
                                     href="<?php echo APPURL; ?>/categories/single-category.php?id=<?php echo $category->id; ?>" 
-                                    class="btn btn-primary w-100 rounded my-2">
+                                    class="btn btn-dark w-100 rounded-pill my-2" style="background-color: #0D0630;">
                                     Discover Products
                                 </a>      
                             </div>

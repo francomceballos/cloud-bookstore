@@ -24,11 +24,11 @@
 
 ?>
 
-<div class="container d-flex">
-  <div class="col-md-11 col-md-6">
-    <div class="card rounded-4 shadow mb-5 mt-5">
-      <div class="card-body p-0">
-        <div class="row g-0">
+<div class="container d-flex justify-content-center" style="font-family: 'Fira Sans', sans-serif">
+  <div class="col-md-11 col-md-6" style="margin-bottom: 100px">
+    <div class="card rounded-4 shadow mb-5 mt-5" >
+      <div class="card-body p-0" >
+        <div class="row g-0" >
           <div class="col-lg-20">
             <div class="p-5">
               <div class="d-flex justify-content-between mb-5">
@@ -128,7 +128,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-2 d-none d-md-block mt-5" style="background-color: #f5f5f5;">
+  <div class="col-md-2 d-none d-md-block mt-5" style="margin-bottom: 100px"">
     <div class="p-3 ">
       <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
       <hr class="my-4">
@@ -139,7 +139,7 @@
           <span class="full_price fw-bold"></span>
           <input class="input_price" type="hidden" name="price">
         </div>
-          <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg checkout" data-mdb-ripple-color="dark">Checkout</button>
+          <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg checkout" style="background-color: #0D0630; data-mdb-ripple-color="dark">Checkout</button>
         </form>
       </div>
     </div>

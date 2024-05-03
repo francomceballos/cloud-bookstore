@@ -47,43 +47,57 @@
     }
 
     ?>
-<div class="container">
-    <div class="row d-flex justify-content-center mt-5 mb-5">
+<div class="container" style="font-family: 'Fira Sans', sans-serif">
+    <div class="row justify-content-center mt-5 mb-5"  style="margin-bottom: 100px">
         <div class="col-md-10">
             <div class="card shadow rounded-4">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3 text-center">
-                            <img id="main-image" src="<?php echo APPURL . '/images/' . $product->image; ?>" class="img-fluid" alt="<?php echo $product->name; ?>"> 
+                            <img id="main-image" 
+                                 src="<?php echo APPURL . '/images/' . htmlspecialchars($product->image, ENT_QUOTES); ?>" 
+                                 class="img-fluid" 
+                                 alt="<?php echo htmlspecialchars($product->name, ENT_QUOTES); ?>"> 
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="product p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <a href="<?php echo APPURL; ?>" class="ml-1 btn btn-primary rounded-pill">
-                                    <i class="fa fa-long-arrow-left "></i> Back
+                            <div class="justify-content-between align-items-center mb-4">
+                                <a href="<?php echo APPURL; ?>" 
+                                   class="ml-1 btn btn-dark rounded-pill" 
+                                   style="background-color: #0D0630;"> 
+                                    <i class="fa fa-long-arrow-left"></i> Back
                                 </a> 
                             </div>
-                            <h5 class="text-uppercase"><?php echo $product->name; ?></h5>
-                            <div class="price mb-4 d-flex flex-row align-items-center"> 
-                                <span class="act-price"><?php echo $product->price; ?>$ per item</span>
+                            <h5 class="text-uppercase"><?php echo htmlspecialchars($product->name, ENT_QUOTES); ?></h5>
+                            <div class="price mb-4 flex-row align-items-center"> 
+                                <span class="act-price"><?php echo htmlspecialchars($product->price, ENT_QUOTES); ?>$ per item</span>
                             </div>
-                            <p class="about mb-4"><?php echo $product->description; ?></p>
+                            <p class="about mb-4"><?php echo htmlspecialchars($product->description, ENT_QUOTES); ?></p>
                             <?php if(isset($_SESSION['user_id'])) : ?>
                                 <?php if($select->rowCount() > 0) : ?>
-                                    <button id="submit" name="submit" type="submit" disabled class="btn btn-primary text-uppercase mr-2 px-4 rounded-pill">
+                                    <button id="submit" 
+                                            name="submit" 
+                                            type="submit" 
+                                            disabled 
+                                            class="btn btn-dark text-uppercase mr-2 px-4 rounded-pill" 
+                                            style="background-color: #0D0630;">
                                         <i class="fas fa-shopping-cart"></i> Already added to cart
                                     </button> 
                                 <?php else : ?>
                                     <form method="post" id="cart-form" action="">
-                                        <input type="hidden" name="prod_id" value="<?php echo $product->id; ?>" />
-                                        <input type="hidden" name="prod_name" value="<?php echo $product->name; ?>" />
-                                        <input type="hidden" name="prod_image" value="<?php echo $product->image; ?>" />
-                                        <input type="hidden" name="prod_price" value="<?php echo $product->price; ?>" />
+                                        <input type="hidden" name="prod_id" value="<?php echo htmlspecialchars($product->id, ENT_QUOTES); ?>" />
+                                        <input type="hidden" name="prod_name" value="<?php echo htmlspecialchars($product->name, ENT_QUOTES); ?>" />
+                                        <input type="hidden" name="prod_image" value="<?php echo htmlspecialchars($product->image, ENT_QUOTES); ?>" />
+                                        <input type="hidden" name="prod_price" value="<?php echo htmlspecialchars($product->price, ENT_QUOTES); ?>" />
                                         <input type="hidden" name="prod_amount" value="1" />
-                                        <input type="hidden" name="prod_file" value="<?php echo $product->file; ?>" />
-                                        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
-                                        <button id="submit" name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4 rounded-pill">
+                                        <input type="hidden" name="prod_file" value="<?php echo htmlspecialchars($product->file, ENT_QUOTES); ?>" />
+                                        <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($_SESSION['user_id'], ENT_QUOTES); ?>" />
+                                        <button id="submit" 
+                                                name="submit" 
+                                                type="submit" 
+                                                class="btn btn-dark text-uppercase mr-2 px-4 rounded-pill" 
+                                                style="background-color: #0D0630;">
                                             <i class="fas fa-shopping-cart"></i> Add to cart
                                         </button> 
                                     </form>
@@ -96,6 +110,8 @@
         </div>
     </div>
 </div>
+
+
 <?php require '../includes/footer.php'; ?>
 
 <script>

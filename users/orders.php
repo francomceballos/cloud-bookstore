@@ -19,8 +19,8 @@
 
 ?>
 
-    <div class="container">
-        <div class="row mt-5 mb-5">
+    <div class="container" style="font-family: 'Fira Sans', sans-serif">
+        <div class="row mt-5 mb-5" style="background-color: #f5f5f5; margin-bottom: 100px">
             <div class="col">
                 <div class="card rounded-4 shadow mt-5">
                     <div class="card-body">

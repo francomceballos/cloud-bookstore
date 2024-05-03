@@ -1,6 +1,6 @@
 
        
-       <footer class="bg-dark text-white text-center text-lg-start" style="margin-top: 40px">
+       <footer class="text-white text-center text-lg-start" style="background-color: #0D0630; margin-top: 40px; font-family: 'Fira Sans', sans-serif"">
        <!-- Grid container -->
        <div class="container p-4">
            <!--Grid row-->

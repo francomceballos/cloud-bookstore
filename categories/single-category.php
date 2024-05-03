@@ -34,7 +34,7 @@
                                 <p class="text-truncate" style="max-width: 100%;"><?php echo htmlspecialchars(substr($product->description, 0, 200), ENT_QUOTES, 'UTF-8'); ?></p>
                                 <a 
                                     href="<?php echo APPURL; ?>/shopping/single.php?id=<?php echo htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>" 
-                                    class="btn btn-primary w-100 rounded my-2"
+                                    class="btn btn-dark w-100 rounded-pill my-2" style="background-color: #0D0630;"
                                 >
                                     More <i class="fas fa-arrow-right"></i>
                                 </a>

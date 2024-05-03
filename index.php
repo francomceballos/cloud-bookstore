@@ -7,34 +7,34 @@
 
         $allRows = $rows->fetchAll(PDO::FETCH_OBJ);
  ?>
-        <div class="container">
-            <div class="row mt-5">
-                <?php foreach ($allRows as $product): ?>
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-4">
-                        <div class="card h-100 rounded-4 shadow">
-                            <img 
-                                height="213px"
-                                style="object-fit: cover;"
-                                src="<?php echo APPURL; ?>/images/<?php echo htmlspecialchars($product->image, ENT_QUOTES, 'UTF-8'); ?>" 
-                                class="card-img-top h-100 img-fluid"
-                                alt="<?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?>"
+<div class="container" style="font-family: 'Fira Sans', sans-serif">
+    <div class="row mt-5" style="margin-bottom: 100px">
+        <?php foreach ($allRows as $product): ?>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-4">
+                 <div class="card h-100 rounded-4 shadow">
+                    <img 
+                            class="card-img-top h-100 img-fluid"
+                            src="<?php echo APPURL; ?>/images/<?php echo htmlspecialchars($product->image, ENT_QUOTES, 'UTF-8'); ?>" 
+                            style="height: 213px; object-fit: cover;" 
+                            alt="<?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?>"
                             >
                             <div class="card-body d-flex flex-column">
-                                <h5 class="d-inline"><b><?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?></b></h5>
-                                <h5 class="d-inline text-muted">
-                                    <div>(<?php echo htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8'); ?>$/item)</div>
-                                </h5>
-                                <p class="text-truncate" style="max-width: 100%;"><?php echo htmlspecialchars(substr($product->description, 0, 200), ENT_QUOTES, 'UTF-8'); ?></p>
-                                <a 
-                                    href="<?php echo APPURL; ?>/shopping/single.php?id=<?php echo htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>" 
-                                    class="btn btn-primary w-100 rounded my-2"
-                                >
-                                    More <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                            <h5 class="d-inline"><b><?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?></b></h5>
+                            <h5 class="d-inline text-muted">
+                            <div>(<?php echo htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8'); ?>$/item)</div>
+                            </h5>
+                            <p class="text-truncate" style="max-width: 100%;"><?php echo htmlspecialchars(substr($product->description, 0, 200), ENT_QUOTES, 'UTF-8'); ?></p>
+                            <a 
+                            href="<?php echo APPURL; ?>/shopping/single.php?id=<?php echo htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>" 
+                            class="btn btn-dark w-100 rounded-pill my-2 btn-outline-light" style="background-color: #0D0630;"
+                        >
+                            See more about</i>
+                        </a>
                     </div>
-                <?php endforeach; ?>
+                </div>
             </div>
-        </div>
-        <?php require 'includes/footer.php'; ?>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<?php require 'includes/footer.php'; ?>
