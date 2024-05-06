@@ -40,11 +40,11 @@
           </div>
           <div class="md-form mb-4">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" class="form-control validate" placeholder="Username" aria-describedby="basic-addon1" required>
+            <input type="text" id="username" name="username" class="form-control validate" value="<?php echo $_SESSION['username'] ?>" aria-describedby="basic-addon1" required readonly>
           </div>
           <div class="md-form mb-4">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" class="form-control validate" placeholder="youremail@example.com">
+            <input type="email" id="email" name="email" class="form-control validate disabled" value="<?php echo $_SESSION['email'] ?>" readonly>
           </div>
           <div class="d-flex justify-content-center mb-4 mt-4 pt-1 pb-1 ">
             <script

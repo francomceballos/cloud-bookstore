@@ -24,6 +24,7 @@
                if(password_verify($password, $fetch['mypassword'])) {
                    $_SESSION['username'] = $fetch['username'];
                    $_SESSION['user_id'] = $fetch['id'];
+                   $_SESSION['email'] = $fetch['email'];
                    header('location: '.APPURL. "");
                } else {
                    echo '<script> alert("Incorrect password") </script>';
