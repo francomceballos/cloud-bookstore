@@ -128,23 +128,23 @@
       </div>
     </div>
   </div>
-  <div class="col-md-2 d-none d-md-block mt-5 d-flex" style="margin-left: 120px; margin-top: 100px;">
-    <div class="p-1" style="margin-top: 50px;">
-      <div class="card rounded-4 shadow mb-5 mt-5">
-        <div class="card-body">
-          <h2 class="fw-bold mb-5 mt-2 pt-1">Summary</h2>
-          <hr class="my-4">
-          <form method="POST" action="cart.php">
-            <div class="summary">
-              <div class="d-flex justify-content-between mb-5">
-                <h3 class="text-uppercase">Total price</h3>
-                <input class="input_price" type="hidden" name="price">
+  <div class="col-md-3 d-none d-md-block mt-5" style="margin-left: 50px; text-align: center;">
+    <div class="p-1" style="margin: auto; margin-top: 50px;">
+      <div class="card rounded-4 shadow mb-5 mt-5" style="text-align: center;">
+        <div class="card-body" style="text-align: center;">
+          <h2 class="fw-bold mb-5 mt-2 pt-1" style="text-align: center;">Summary</h2>
+          <hr class="my-4" style="text-align: center;">
+          <form method="POST" action="cart.php" style="text-align: center;">
+            <div class="summary" style="text-align: center;">
+              <div class="justify-content-between mb-5" style="text-align: center;">
+                <h3 class="text-uppercase fw-bold justify-content-" style="text-align: center;">Total price</h3>
+                <input class="input_price" type="hidden" name="price" style="text-align: center;">
               </div>
-              <div>
-                <span class="full_price fw-bold mb-5 d-flex justify-content-center h1"></span>
+              <div style="text-align: center;">
+                <span class="full_price fw-bold mb-5 d-flex justify-content-center h1" style="text-align: center;"></span>
               </div>
-              <div class="d-flex justify-content-center">
-                <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg checkout rounded-pill" style="background-color: #0D0630; data-mdb-ripple-color="dark">Checkout</button>
+              <div style="text-align: center;">
+                <button type="submit" name="submit" class="btn btn-dark btn-block btn-lg checkout rounded-pill" style="background-color: #0D0630; data-mdb-ripple-color="dark"; text-align: center;" >Checkout</button>
               </div>
           </form>
         </div>
