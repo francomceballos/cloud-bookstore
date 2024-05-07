@@ -38,7 +38,7 @@
 ?>
 <div class="container ">
   <div class="row justify-content-center">
-    <div class="col-md-9">
+    <div class="col-md-6">
       <div class="card rounded-4 shadow mt-5 mb-5">
         <div class="card-body">
           <form class="mt-4" method="POST" action="login.php">

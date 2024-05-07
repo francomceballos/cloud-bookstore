@@ -76,7 +76,7 @@
             <input type="password" class="form-control" id="repeat-password" name="repeat-password" required oninput="checkPasswords(this, 'password')">
           </div>
           <div class="form-group mb-3">
-            <button type="send" id="submit" name="submit" class="btn btn-dark w-100 rounded-pill mt-5" style="background-color: #0D0630;">Register</button>
+            <button type="send" id="submit" name="submit" class="btn btn-dark btn-lg  w-100 rounded-pill mt-5" style="background-color: #0D0630;">Register</button>
           </div>
         </form>
       </div>
