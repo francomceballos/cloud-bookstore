@@ -43,14 +43,13 @@
            }
        }
     }
-    
 ?>
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card shadow p-3 mb-5 bg-white rounded-4 mt-5">
-        <form action="register.php" method="POST" class="mt-3">
+        <form id="register-form" action="register.php" method="POST" class="mt-3">
           <h4 class="text-center mt-3">Register</h4>
           <div class="form-group mb-3">
             <label for="username" class="form-label">Username</label>
@@ -69,14 +68,15 @@
           </div>
           <div class="form-group mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <input type="password" class="form-control" id="password" name="password" required minlength="6" oninput="checkPassword(this)">
+            <div class="invalid-feedback">Password must be at least 6 characters and contain letters and numbers.</div>
           </div>
           <div class="form-group mb-3">
             <label for="repeat-password" class="form-label">Repeat Password</label>
             <input type="password" class="form-control" id="repeat-password" name="repeat-password" required oninput="checkPasswords(this, 'password')">
           </div>
           <div class="form-group mb-3">
-            <button type="submit" class="w-100 btn btn-lg btn-dark rounded-pill mt-5" style="background-color: #0D0630;" name="submit">Register</button>
+            <button type="send" id="submit" name="submit" class="btn btn-dark w-100 rounded-pill mt-5" style="background-color: #0D0630;">Register</button>
           </div>
         </form>
       </div>
@@ -92,5 +92,13 @@
         input.setCustomValidity('');
       }
     }
+    function checkPassword(input) {
+      if (!/^(?=.*\d)(?=.*[a-z])[\w!@#$%^&*()-]{6,}$/.test(input.value)) {
+        input.setCustomValidity('Password must be at least 6 characters and contain letters and numbers.');
+      } else {
+        input.setCustomValidity('');
+      }
+    }
+</script>
 </script>
 <?php require '../includes/footer.php'; ?>

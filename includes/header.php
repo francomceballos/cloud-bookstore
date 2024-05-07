@@ -28,7 +28,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js?render=Y6LfNGtMpAAAAAP_JGn7iZHFG_xt0TUvjzCa9iXhM"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfNGtMpAAAAAP_JGn7iZHFG_xt0TUvjzCa9iXhM"></script>
+    <script>
+        $(document).ready(function() {
+            $("#submit").click(function() {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfNGtMpAAAAAP_JGn7iZHFG_xt0TUvjzCa9iXhM', {action: 'submit'}).then(function(token) {
+                        $('#register-form').prepend('<input type="hidden" name="token" value="' + token + '">');
+                        $('#register-form').prepend('<input type="hidden" name="action" value="submit">');
+                        $('#register-form').submit();
+
+            });
+            });
+            })
+        })
+    </script>
+
+
     </head>
   <body style="background-color: #CDCDCD">
 
