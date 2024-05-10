@@ -20,13 +20,13 @@
                         <div class="card h-100 shadow rounded-4" >
                             <img 
                                 src="../images/<?php echo $category->image; ?>" 
-                                class="card-img-top h-100" 
+                                class="card-img-top" 
                                 style="object-fit: cover;" 
                                 height="213px" 
                                 alt="<?php echo $category->name; ?> image">
                             <div class="card-body d-flex flex-column" >
                                 <h5 class="card-title"><b><?php echo $category->name; ?></b> </h5>
-                                <p class="card-text"><?php echo substr($category->description , 0 , 300) . ' ...'; ?></p> 
+                                <p class="card-text h-100"><?php echo substr($category->description , 0 , 300) . ' ...'; ?></p> 
                                 <a 
                                     href="<?php echo APPURL; ?>/categories/single-category.php?id=<?php echo $category->id; ?>" 
                                     class="btn btn-dark w-100 rounded-pill my-2" style="background-color: #0D0630;">
