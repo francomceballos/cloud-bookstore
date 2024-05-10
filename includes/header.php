@@ -77,7 +77,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="<?php echo APPURL; ?>/users/orders.php?id=<?php echo $_SESSION['user_id']; ?>">My orders</a></li>
-                    <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
+                     <li><a class="dropdown-item" href="<?php echo APPURL; ?>/users/wishlist.php?id=<?php echo $_SESSION['user_id']; ?>">My wishlist</a></li> 
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="<?php echo APPURL;?>/auth/logout.php">Logout</a></li>
                 </ul>
