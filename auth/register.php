@@ -45,7 +45,7 @@
     }
 ?>
 
-<div class="container">
+<div class="container" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px; margin-top: 100px;">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card shadow p-3 mb-5 bg-white rounded-4 mt-5">

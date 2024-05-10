@@ -36,7 +36,7 @@
     }
 
 ?>
-<div class="container ">
+<div class="container " style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px; margin-top: 100px;">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card rounded-4 shadow mt-5 mb-5">

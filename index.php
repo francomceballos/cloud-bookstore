@@ -7,7 +7,7 @@
 
         $allRows = $rows->fetchAll(PDO::FETCH_OBJ);
  ?>
-<div class="container" style="font-family: 'Fira Sans', sans-serif">
+<div class="container" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px; margin-top: 100px;">
     <div class="row mt-5" style="margin-bottom: 100px">
         <?php foreach ($allRows as $product): ?>
             <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-4">

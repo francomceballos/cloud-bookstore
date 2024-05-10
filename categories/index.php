@@ -12,7 +12,7 @@
 
 ?>
 
-    <div class="container" style="font-family: 'Fira Sans', sans-serif">  
+    <div class="container" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px; margin-top: 100px; ">  
         <div class="row mt-5" style="margin-bottom: 100px">
             <div class="row">
                 <?php foreach ($allCategories as $category): ?>
