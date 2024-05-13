@@ -31,7 +31,11 @@
                    echo '<script> alert("Incorrect password") </script>';
                }
            }else {
-               echo '<script> alert("User does not exist") </script>';
+               ?>
+               <div class="alert alert-danger" role="alert">
+                 User does not exist
+               </div>
+               <?php
            }
        }
     }
@@ -42,7 +46,7 @@
 <div class="container my-5">
 <div class="container-fluid"> 
   <div class="row">
-    <div class="col">
+    <div class="col-md-6 offset-md-2">
       <div class="card rounded-4 shadow">
         <div class="card-body">
           <h2 class=" mt-5 text-center mb-4">Login</h2>
