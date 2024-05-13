@@ -21,20 +21,23 @@
 
 ?>
 
-    <div class="container" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px; margin-top: 100px">
+    <div class="container" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px;">
         <div class="row mt-5 mb-5">
             <div class="col">
+                <h1 class="text-center mb-5">List showing all the users orders</h1>
                 <form action="orders.php" method="GET">
-                <div class="input-group mb-3 mt-3 w-50 d-flex justify-content-end">
-                        <input type="text" name="search" class="form-control" placeholder="Search by name or email" value="<?= $search ?>">
-                        <button type="submit" class="btn btn-primary btn-lg rounded-pill">Search</button>
+                <div class="d-flex justify-content-end w-100">
+                    <div class="input-group mb-3 mt-3 w-50">
+                        <input type="text" name="search" class="form-control" placeholder="Search orders by name or email" value="<?= $search ?>">
+                        <button type="submit" class="btn btn-dark btn-lg rounded-pill" style="background-color: #130303;">Search</button>
+                    </div>
                 </div>
                 </form>
                 <?php if(!empty($orders)): ?>
                 <div class="card rounded-4 shadow">
                     <div class="card-body">
-                        <h3 class="card-title d-inline">My orders</h3>
-                        <table class="table mb-5 table-hover">
+                        <h3 class="card-title d-inline">All orders</h3>
+                        <table class="table mb-5 table-hover mt-5">
                             <thead>
                                 <tr>
                                     <th scope="col">id</th>
@@ -75,5 +78,4 @@
         </div>
     </div>
     </div>
-
 <?php  require '../includes/footer.php'; ?>

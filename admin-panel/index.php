@@ -19,6 +19,10 @@
     $admins-> execute();
     $allAdmins = $admins->fetch(PDO::FETCH_OBJ);
 
+    $orders = $conn->query("SELECT COUNT(*) as orders_count FROM orders");
+    $orders-> execute();
+    $allOrders = $orders->fetch(PDO::FETCH_OBJ);
+
 
 
     if(!isset($_SESSION['admin_name'])) {
@@ -35,7 +39,8 @@
             <?php foreach(array(
                 'products' => $allProducts->products_count,
                 'categories' => $allCategories->categories_count,
-                'admins' => $allAdmins->admins_count
+                'admins' => $allAdmins->admins_count,
+                'Total Orders' => $allOrders->orders_count
             ) as $title => $count): ?>
                 <div class="col-md-4">
                     <div class="card rounded-4 shadow">

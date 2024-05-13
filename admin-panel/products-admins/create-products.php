@@ -51,6 +51,7 @@
     <div class="container-fluid">
        <div class="row">
         <div class="col">
+        <h1 class="text-center mb-5">Create new products</h1>
           <div class="card rounded-4 shadow">
             <div class="card-body">
               <h3 class="card-title mb-5 d-inline">Create Products</h3>
