@@ -36,22 +36,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <?php if(isset($_SESSION['admin_name'])): ?>
-                    <ul class="navbar-nav side-nav" style="background-color: #FF4365; margin-top: 4px; animation: slideIn 0.5s ease-in-out;">
+                    <ul class="navbar-nav side-nav justify-content-center" style="background-color: #FF4365; margin-top: 4px; animation: slideIn 0.5s ease-in-out;">
                         <li class="nav-item">
-                            <a class="nav-link text-white" style="margin-left: 20px; margin-top: 0px;" href="<?php echo ADMINURL; ?>/index.php">Home
-                            </a>
+                            <a class="btn btn-secondary text-white w-50 mt-5 rounded-pill  " style="margin-left: 20px; margin-top: 0px;" href="<?php echo ADMINURL; ?>/index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="<?php echo ADMINURL; ?>/admins/admins.php" style="margin-left: 20px;">Admins</a>
+                            <a class="btn btn-secondary text-white w-50 mt-3 rounded-pill " href="<?php echo ADMINURL; ?>/admins/admins.php" style="margin-left: 20px;">Admins</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="<?php echo ADMINURL; ?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
+                            <a class="btn btn-secondary text-white w-50 mt-3 rounded-pill" href="<?php echo ADMINURL; ?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="<?php echo ADMINURL; ?>/products-admins/show-products.php" style="margin-left: 20px;">Products</a>
+                            <a class="btn btn-secondary text-white w-50 mt-3 rounded-pill " href="<?php echo ADMINURL; ?>/products-admins/show-products.php" style="margin-left: 20px;">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="<?php echo ADMINURL; ?>/products-admins/orders.php" style="margin-left: 20px;">Orders</a>
+                            <a class="btn btn-secondary text-white w-50 mt-3 rounded-pill" href="<?php echo ADMINURL; ?>/products-admins/orders.php" style="margin-left: 20px;">Orders</a>
                         </li>
                     </ul>
                 <?php endif; ?>
