@@ -24,7 +24,8 @@
                     <div class="card-body">
                         <h3 class="card-title mb-4 d-inline">Products</h3>
                         <a href="<?php echo ADMINURL; ?>/products-admins/create-products.php" 
-                        class="btn btn-primary mb-4 float-end btn-lg rounded-pill">
+                        class="btn btn-light text-light mb-4 float-end btn-lg rounded-pill" 
+                        style="background-color: #64355C;">
                         Create Products</a>
                         <table class="table">
                             <thead>

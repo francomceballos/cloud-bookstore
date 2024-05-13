@@ -29,7 +29,7 @@
                 <div class="d-flex justify-content-end w-100">
                     <div class="input-group mb-3 mt-3 w-50">
                         <input type="text" name="search" class="form-control" placeholder="Search orders by name or email" value="<?= $search ?>">
-                        <button type="submit" class="btn btn-dark btn-lg rounded-pill" style="background-color: #130303;">Search</button>
+                        <button type="submit" class="btn btn-dark btn-lg" style="background-color: #130303; border-radius: 0 1rem 1rem 0  ;"> Search </button>
                     </div>
                 </div>
                 </form>

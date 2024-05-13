@@ -79,7 +79,8 @@
             <button 
               type="submit" 
               name="submit" 
-              class="btn btn-primary w-100 mb-4 mt-4 rounded-pill"
+              class="btn btn-dark text-white w-100 mb-4 mt-4 rounded-pill btn-lg"
+              style="background-color: #64355C;"
             >
               Login
             </button>

@@ -25,34 +25,37 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="<?php echo ADMINURL; ?>/styles/style.css" rel="stylesheet">
 </head>
-<body style="font-family: 'Fira Sans', sans-serif; margin-bottom: 50px; margin-top: 10px;">
+<body style="font-family: 'Fira Sans', sans-serif; background-color: #F7D1CD !important;">
 <div id="wrapper">
-    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark " style="background-color: #231651;">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: #330036 !important;">
         <div class="container">
             <a class="navbar-brand" href="<?php echo ADMINURL; ?>">ADMIN PANEL</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-                aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <?php if(isset($_SESSION['admin_name'])): ?>
-                    <ul class="navbar-nav side-nav justify-content-center" style="background-color: #FF4365; margin-top: 4px; animation: slideIn 0.5s ease-in-out;">
-                        <li class="nav-item">
-                            <a class="btn btn-secondary text-white w-50 mt-5 rounded-pill  " style="margin-left: 20px; margin-top: 0px;" href="<?php echo ADMINURL; ?>/index.php">Home</a>
+                    <ul class="navbar-nav side-nav me-auto mt-1 d-flex flex-wrap" style="background-color: #330036 !important;">
+                        <li class="nav-item w-100 d-flex justify-content-center">
+                            <a class="btn btn-light text-white w-75 mt-3 rounded-pill btn-lg" style="background-color: #64355C;" href="<?php echo ADMINURL; ?>/index.php">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="btn btn-secondary text-white w-50 mt-3 rounded-pill " href="<?php echo ADMINURL; ?>/admins/admins.php" style="margin-left: 20px;">Admins</a>
+                        <li class="nav-item w-100 d-flex justify-content-center">
+                            <a class="btn btn-light text-white w-75 mt-3 rounded-pill btn-lg" style="background-color: #64355C;" href="<?php echo ADMINURL; ?>/admins/admins.php">Admins</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="btn btn-secondary text-white w-50 mt-3 rounded-pill" href="<?php echo ADMINURL; ?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
+                        <li class="nav-item w-100 d-flex justify-content-center">
+                            <a class="btn btn-light text-white w-75 mt-3 rounded-pill btn-lg" style="background-color: #64355C;" href="<?php echo ADMINURL; ?>/categories-admins/show-categories.php">Categories</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="btn btn-secondary text-white w-50 mt-3 rounded-pill " href="<?php echo ADMINURL; ?>/products-admins/show-products.php" style="margin-left: 20px;">Products</a>
+                        <li class="nav-item w-100 d-flex justify-content-center">
+                            <a class="btn btn-light text-white w-75 mt-3 rounded-pill btn-lg" style="background-color: #64355C;" href="<?php echo ADMINURL; ?>/products-admins/show-products.php">Products</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="btn btn-secondary text-white w-50 mt-3 rounded-pill" href="<?php echo ADMINURL; ?>/products-admins/orders.php" style="margin-left: 20px;">Orders</a>
+                        <li class="nav-item w-100 d-flex justify-content-center">
+                            <a class="btn btn-light text-white w-75 mt-3 rounded-pill btn-lg" style="background-color: #64355C;" href="<?php echo ADMINURL; ?>/products-admins/show-orders.php">Orders</a>
+                        </li>
+                        <li class="nav-item w-100 d-flex justify-content-center">
+                            <a class="btn btn-light text-white w-75 mt-3 rounded-pill btn-lg" style="background-color: #64355C;" href="<?php echo ADMINURL; ?>/users-admins/show-users.php">Users</a>
                         </li>
                     </ul>
+
                 <?php endif; ?>
                 <ul class="navbar-nav ms-auto">
                     <?php if(!isset($_SESSION['admin_name'])): ?>
@@ -62,35 +65,17 @@
                         </li>
                     <?php else: ?>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php echo $_SESSION['admin_name']; ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="<?php echo ADMINURL; ?>/admins/logout-admins.php">Logout</a></li>
                             </ul>
                         </li>
-                    <?php endif; ?>  
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <?php if(isset($_SESSION['admin_name'])): ?>
-        <div class="container" style="max-width: 1000px; margin-top: 20px;">
-            <a class="nav-link" style="color: white;" href="<?php echo ADMINURL; ?>/welcome-admins.php">Welcome, <?php echo $_SESSION['admin_name']; ?></a>
-        </div>
-    <?php endif; ?>
 
-    <?php if(!isset($_SESSION['admin_name'])): ?>
-        <div class="container" style="max-width: 1000px; margin-top: 20px;">
-            <p style="color: white;">You are not logged in. Please <a href="<?php echo ADMINURL; ?>/admins/login-admins.php"></a> to access the admin panel.</p>
-        </div>
-    <?php endif; ?>
-
-    <script>
-        $(document).ready(function() {
-            <?php if(isset($_SESSION['admin_name'])): ?>
-                $('#wrapper').css('margin-left', '300px');
-            <?php endif; ?>
-        });
-    </script>

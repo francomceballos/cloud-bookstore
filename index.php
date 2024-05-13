@@ -18,7 +18,7 @@
     <form action="index.php" method="GET">
         <div class="input-group mb-3">
             <input type="text" class="form-control" name="search" placeholder="Search products" aria-label="Search products" aria-describedby="button-addon2">
-            <button class="btn btn-secondary btn-lg" type="submit" id="button-addon2">Search</button>
+            <button class="btn btn-secondary btn-lg" style="background-color: #0D0630; border-radius: 0 1rem 1rem 0  ;" type="submit" id="button-addon2">Search</button>
         </div>
     </form>
     <div class="row mt-5" style="margin-bottom: 100px">
