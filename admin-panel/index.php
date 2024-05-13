@@ -35,6 +35,7 @@
 
     <!-- admin-panel/index.html -->
     <div class="container-fluid">
+    <h1 class="text-center mb-5">Summary</h1>
         <div class="row">
             <?php foreach(array(
                 'products' => $allProducts->products_count,

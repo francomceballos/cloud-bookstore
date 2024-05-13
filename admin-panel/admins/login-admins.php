@@ -28,7 +28,12 @@
 
                    header('location: '.ADMINURL. "");
                } else {
-                   echo '<script> alert("Incorrect password") </script>';
+                   ?>
+                   <div class="alert alert-danger" role="alert">
+                     Incorrect password
+                   </div>
+                   <?php
+                  
                }
            }else {
                ?>

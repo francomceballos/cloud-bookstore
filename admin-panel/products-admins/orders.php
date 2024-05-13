@@ -21,8 +21,8 @@
 
 ?>
 
-    <div class="container" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px;">
-        <div class="row mt-5 mb-5">
+    <div class="container-fluid" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px;">
+        <div class="row">
             <div class="col">
                 <h1 class="text-center mb-5">List showing all the users orders</h1>
                 <form action="orders.php" method="GET">
