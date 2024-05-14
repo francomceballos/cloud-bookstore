@@ -16,6 +16,7 @@
 ?>
 
     <div class="container-fluid">
+    <h1 class="text-center mb-5">List of Admins</h1>
         <div class="row">
             <div class="col">
                 <div class="card rounded-4 shadow">

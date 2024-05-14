@@ -48,8 +48,7 @@
 ?>
 
 
-<div class="container my-5">
-<div class="container-fluid"> 
+<div class="container mt-5">
   <div class="row">
     <div class="col-md-6 offset-md-2">
       <div class="card rounded-4 shadow">
@@ -89,7 +88,6 @@
       </div>
     </div>
   </div>
-</div>
 
 
 <?php include '../includes/footer.php'; ?>

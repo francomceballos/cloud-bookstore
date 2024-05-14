@@ -4,7 +4,7 @@
 <?php
     if(!isset($_SESSION['admin_name'])) {
       header('location: '.ADMINURL. "/admins/login-admins.php");     
-  }
+      }
 
       $select = $conn->query("SELECT * FROM categories");
       $select->execute();
@@ -39,16 +39,17 @@
           ]);
 
           if(move_uploaded_file($_FILES['image']['tmp_name'], $dir_img) && move_uploaded_file($_FILES['file']['tmp_name'], $dir_fil)) {
-            header("location: ".ADMINURL."/products-admins/show-products.php");
+            header('Location: ' . ADMINURL . '/products-admins/show-products.php');
           } else {
             echo "<script>alert('image upload failed');</script>";
           }
         }
       }
+
 ?>
 
 
-    <div class="container-fluid">
+    <div class="container mt-5">
        <div class="row">
         <div class="col">
         <h1 class="text-center mb-5">Create new products</h1>
@@ -106,9 +107,10 @@
                 </div>
 
       
-                <!-- Submit button -->
-                <button type="submit" name="submit" class="btn btn-light text-light mb-4 btn-lg rounded-pill w-25" style="background-color: #64355C;">create</button>
-
+                
+                <div class="d-flex justify-content-center">
+                  <button type="submit" name="submit" class="btn btn-light text-light mb-4 btn-lg rounded-pill w-25" style="background-color: #64355C;">create</button>
+                </div>
           
               </form>
 

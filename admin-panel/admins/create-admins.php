@@ -40,15 +40,15 @@
               <form method="POST" action="create-admins.php">
                 <div class="mb-4 mt-4">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="youremail@example.com" required>  
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>  
                 </div>
                 <div class="mb-4">
                   <label for="username" class="form-label">Username</label>
-                  <input type="text" name="admin_name" id="admin_name" placeholder="username" class="form-control" required>
+                  <input type="text" name="admin_name" id="admin_name" placeholder=" Enter username" class="form-control" required>
                 </div>
                 <div class="mb-4">
                   <label for="password" class="form-label">Password</label>
-                  <input type="password" name="password" id="password" placeholder="password" class="form-control" required>
+                  <input type="password" name="password" id="password" placeholder=" Enter password" class="form-control" required>
                 </div>
                 <div class="mb-4">
                   <button type="submit" name="submit" class="btn btn-primary btn-lg rounded-pill">Create</button>

@@ -16,7 +16,7 @@
         $delete = $conn->query("DELETE FROM products WHERE id='$id'");
         $delete->execute();
         
-        header("location: ".ADMINURL."/products-admins/show-products.php");
+        header("location: " . ADMINURL . "/products-admins/show-products.php");
 
     } else {
         header("location: http://localhost/bookstore/404.php");
