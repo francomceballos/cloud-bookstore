@@ -3,6 +3,7 @@
   session_start();
 
   define("ADMINURL", "http://localhost/bookstore/admin-panel");
+  define("APPURL", "http://localhost/bookstore");
 
 ?>
 
@@ -52,9 +53,9 @@
           <?php else : ?>
             
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-secondary nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <?php echo $_SESSION['admin_name']; ?>
-              </a>
+              </button>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="<?php echo ADMINURL; ?>/admins/logout-admins.php">Logout</a></li>
               </ul>
