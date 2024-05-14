@@ -36,7 +36,7 @@
   }
 
 ?>
-<div class="container-fluid">
+<div class="container mt-5">
   <div class="row">
     <div class="col">
       <div class="card rounded-4 shadow">

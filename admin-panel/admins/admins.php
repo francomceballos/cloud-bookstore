@@ -15,7 +15,7 @@
 
 ?>
 
-    <div class="container-fluid">
+    <div class="container mt-5">
     <h1 class="text-center mb-5">List of Admins</h1>
         <div class="row">
             <div class="col">

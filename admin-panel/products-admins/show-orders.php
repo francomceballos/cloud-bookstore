@@ -21,11 +21,11 @@
 
 ?>
 
-    <div class="container-fluid" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px;">
+    <div class="container mt-5" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px;">
         <div class="row">
             <div class="col">
                 <h1 class="text-center mb-5">List showing all the users orders</h1>
-                <form action="orders.php" method="GET">
+                <form action="show-orders.php" method="GET">
                 <div class="d-flex justify-content-end w-100">
                     <div class="input-group mb-3 mt-3 w-50">
                         <input type="text" name="search" class="form-control" placeholder="Search orders by name or email" value="<?= $search ?>">

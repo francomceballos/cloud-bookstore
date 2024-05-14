@@ -34,7 +34,7 @@
 
 
     <!-- admin-panel/index.html -->
-    <div class="container">
+    <div class="container mt-5">
     <h1 class="text-center mb-5">Summary</h1>
         <div class="row">
             <?php foreach(array(
@@ -43,7 +43,7 @@
                 'admins' => $allAdmins->admins_count,
                 'Total Orders' => $allOrders->orders_count
             ) as $title => $count): ?>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card rounded-4 shadow">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo ucfirst($title) ?></h5>

@@ -30,7 +30,7 @@
     
 ?>
 
-    <div class="container-fluid">
+    <div class="container mt-5">
       <div class="row">
         <div class="col">
         <h1 class="text-center mb-5">Create new Admin</h1>
