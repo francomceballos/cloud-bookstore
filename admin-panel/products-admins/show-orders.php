@@ -21,7 +21,7 @@
 
 ?>
 
-    <div class="container mt-5" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px;">
+    <div class="container" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px;">
         <div class="row">
             <div class="col">
                 <h1 class="text-center mb-5">List showing all the users orders</h1>

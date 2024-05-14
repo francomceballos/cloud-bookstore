@@ -15,7 +15,7 @@
 
 ?>
 
-    <div class="container mt-5">
+    <div class="container mt-5" style="font-family: 'Fira Sans', sans-serif; margin-bottom: 100px;">
     <h1 class="text-center mb-5">List of Admins</h1>
         <div class="row">
             <div class="col">

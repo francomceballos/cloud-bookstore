@@ -3,7 +3,7 @@
 
 
 <?php
-
+  ob_start();
     if(!isset($_SESSION['admin_name'])) {
         header('location: '.ADMINURL. "/admins/login-admins.php");     
     }
@@ -23,7 +23,6 @@
                'email' => $email,
                'mypassword' => password_hash($password, PASSWORD_DEFAULT),
            ]);
-
            header('location:'.ADMINURL. "/admins/admins.php");
        }
     }
