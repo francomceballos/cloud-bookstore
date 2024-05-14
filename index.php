@@ -41,7 +41,7 @@
                             href="<?php echo APPURL; ?>/shopping/single.php?id=<?php echo htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>" 
                             class="btn btn-dark w-100 rounded-pill my-2" style="background-color: #0D0630;"
                         >
-                            See more</i>
+                            See more
                         </a>
                     </div>
                 </div>
@@ -49,4 +49,6 @@
         <?php endforeach; ?>
     </div>
 </div>
+
+
 <?php require 'includes/footer.php'; ?>

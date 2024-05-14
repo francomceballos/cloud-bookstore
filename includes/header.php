@@ -76,14 +76,12 @@
                         </li>
 
                     <?php else: ?>
-
                         <li class="nav-item">
                             <a class="nav-link text-white" href="<?php echo APPURL; ?>/auth/login.php">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="<?php echo APPURL; ?>/auth/register.php">Register</a>
                         </li>
-
                     <?php endif; ?>
                 </ul>
             </div>

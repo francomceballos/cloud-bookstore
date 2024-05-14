@@ -26,7 +26,7 @@
 
 <div class="container d-flex " style="font-family: 'Fira Sans', sans-serif">
   <div class="col-md-11">
-    <div class="card rounded-4 shadow mb-5 mt-5" >
+    <div class="rounded-4 shadow mb-5 mt-5" style="background-color: white">
       <div class="card-body">
         <div class="row g-0" >
           <div class="col-lg-20">
@@ -120,8 +120,13 @@
               <?php endif ?>
             </div>
             <div class=" d-flex justify-content-between">
-                <a href="<?php echo APPURL; ?>" class="btn btn-light text-white rounded-pill"  style="background-color: #384E77;"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
-                <button class="delete-all delete-all-items btn btn-danger rounded-pill">Clear cart</button>
+                <a href="<?php echo APPURL; ?>" 
+                class="btn btn-light text-white rounded-pill"  
+                style="background-color: #384E77; padding: 10px; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px;"><i 
+                class="fas fa-arrow-left"></i> Continue Shopping</a>
+                <button 
+                class="delete-all delete-all-items btn btn-danger rounded-pill"
+                style="padding: 10px; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px;">Clear cart</button>
             </div>
           </div>
         </div>

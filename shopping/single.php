@@ -60,7 +60,7 @@
 <div class="container" style="font-family: 'Fira Sans', sans-serif">
     <div class="row justify-content-center mt-5 mb-5"  style="margin-bottom: 100px">
         <div class="col-md-10">
-            <div class="card shadow rounded-4">
+            <div class="shadow rounded-4" style="background-color: white">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3 text-center">
