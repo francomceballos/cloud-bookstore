@@ -50,7 +50,7 @@
                   <input type="password" name="password" id="password" placeholder=" Enter password" class="form-control" required>
                 </div>
                 <div class="mb-4">
-                  <button type="submit" name="submit" class="btn btn-primary btn-lg rounded-pill">Create</button>
+                  <button type="submit" name="submit" class="btn btn-dark btn-lg d-block mx-auto rounded-pill w-50" style="background-color: #020122;">Create</button>
                 </div>
               </form>
             </div>

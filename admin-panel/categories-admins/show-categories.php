@@ -24,7 +24,7 @@
                 <div class="card rounded-4 shadow">
                     <div class="card-body">
                         <h3 class="card-title mb-4 d-inline">Categories</h3>
-                        <a href="<?php echo ADMINURL; ?>/categories-admins/create-category.php" class="btn btn-light text-light mb-4 float-end btn-lg rounded-pill" style="background-color: #64355C;">Create Categories</a>
+                        <a href="<?php echo ADMINURL; ?>/categories-admins/create-category.php" class="btn btn-dark text-light mb-4 float-end btn-lg rounded-pill" style="background-color: #020122;">Create Categories</a>
                         <table class="table mb-5 table-striped table-responsive">
                             <thead class="thead-dark">
                                 <tr>

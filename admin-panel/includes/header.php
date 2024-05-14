@@ -16,7 +16,7 @@
 </head>
 <body style="margin-top: 100px; font-family: 'Fira Sans', sans-serif; margin-left: 200px;">
 <div id="wrapper">
-    <nav class="navbar header-top fixed-top navbar-light navbar-expand-lg" style="background-color: #330036">
+    <nav class="navbar header-top fixed-top navbar-light navbar-expand-lg" style="background-color: #020122">
       <div class="container">
       <a class="navbar-brand text-white" href="<?php echo ADMINURL; ?>">Admin Panel</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
@@ -32,13 +32,13 @@
         </button>
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-            <ul class="navbar-nav flex-column side-nav" style="width: 250px; position: fixed; top: 0; left: 0; background-color: #330036; z-index: 9999; height: 100%; overflow-y: auto;margin-top: 60px">
-                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3 mt-5" style="background-color: #330036; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>">Home
-                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #330036; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/admins/admins.php" style="margin-left: 20px;">Admins</a></li>
-                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #330036; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a></li>
-                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #330036; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/products-admins/show-products.php" style="margin-left: 20px;">Products</a></li>
-                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #330036; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/products-admins/show-orders.php">Orders</a></li>
-                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #330036; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/users-admins/show-users.php">Users</a></li>
+            <ul class="navbar-nav flex-column side-nav" style="width: 250px; position: fixed; top: 0; left: 0; background-color: #020122; z-index: 9999; height: 100%; overflow-y: auto;margin-top: 60px">
+                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3 mt-5" style="background-color: #020122; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>">Home
+                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #020122; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/admins/admins.php" style="margin-left: 20px;">Admins</a></li>
+                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #020122; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a></li>
+                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #020122; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/products-admins/show-products.php" style="margin-left: 20px;">Products</a></li>
+                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #020122; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/products-admins/show-orders.php">Orders</a></li>
+                <li class="nav-item"><a class="btn btn-secondary w-100 btn-lg mb-3" style="background-color: #020122; width: 100%; min-height: 45px;" href="<?php echo ADMINURL; ?>/users-admins/show-users.php">Users</a></li>
             </ul>
         </div>
         <div style="margin-left: 300px;">

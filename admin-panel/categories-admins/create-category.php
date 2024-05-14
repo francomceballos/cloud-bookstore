@@ -55,7 +55,7 @@
               <label for="image">Image</label>
               <input type="file" name="image" id="image" class="form-control" placeholder="Image" required>
             </div>
-            <button type="submit" name="submit" class="btn btn-primary d-block w-100">Create</button>
+            <button type="submit" name="submit" class="btn btn-dark btn-lg d-block mx-auto w-50 rounded-pill" style="background-color: #020122;">Create</button>
           </form>
         </div>
       </div>
