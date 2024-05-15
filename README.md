@@ -4,11 +4,14 @@ This is a web-based bookstore project that allows users to browse and purchase b
 
 ## Features
 
+- Main Page: Search books by name, search books by category.
 - Admin Panel: Manage books, orders, users, and other aspects of the bookstore.
 - User Panels: Allow users to register, login, browse books, add to wishlist, and make purchases.
 - Wishlist: Users can add books to their wishlist for future reference.
 - Orders: Manage and track orders placed by users.
 - Stripe Integration: Securely process payments using the Stripe payment gateway.
+
+![](https://github.com/francomceballos/gifs/blob/f17ee2d973debedaef7188abc9104cd7374d04e7/Animation.gif)
 
 ## Installation
 
